@@ -38,7 +38,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Biz
             List<SelectListItem> cityList = (from city in _dbCity.M_市区町村s
                                              select new SelectListItem
                                              {
-                                                 Value = city.市区町村cd,
+                                                 Value = city.市区町村CD,
                                                  Text = city.都道府県名 + city.市区町村名
                                              }).ToList();
             //空行をinsertします。

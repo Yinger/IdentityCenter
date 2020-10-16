@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
 using RcrsCore.IdentityServer.Extensions.IdentityServer;
 using RcrsCore.IdentityServer.Helper;
 using RcrsCore.IdentityServer.Models;
-using RcrsCore.IdentityServer.Models.DomainEntity;
 
 namespace RcrsCore.IdentityServer
 {

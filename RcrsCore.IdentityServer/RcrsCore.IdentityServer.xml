@@ -20,7 +20,7 @@
             認証コントローラー
             </summary>
         </member>
-        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.Oauth2Controller.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole},Microsoft.AspNetCore.Identity.SignInManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser},IdentityServer4.Services.IIdentityServerInteractionService,IdentityServer4.Stores.IClientStore,Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider,IdentityServer4.Services.IEventService)">
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.Oauth2Controller.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationRole},Microsoft.AspNetCore.Identity.SignInManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser},IdentityServer4.Services.IIdentityServerInteractionService,IdentityServer4.Stores.IClientStore,Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider,IdentityServer4.Services.IEventService)">
             <summary>
             初期化します。
             </summary>
@@ -68,7 +68,7 @@
         <member name="F:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController._events">
             <summary>event service</summary>
         </member>
-        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole},Microsoft.AspNetCore.Identity.SignInManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser},IdentityServer4.Services.IIdentityServerInteractionService,IdentityServer4.Stores.IClientStore,Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider,IdentityServer4.Services.IEventService)">
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationRole},Microsoft.AspNetCore.Identity.SignInManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser},IdentityServer4.Services.IIdentityServerInteractionService,IdentityServer4.Stores.IClientStore,Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider,IdentityServer4.Services.IEventService)">
             <summary>
             初期化します。
             </summary>
@@ -365,106 +365,6 @@
             初期化します。
             </summary>
             <param name="options"></param>
-        </member>
-        <member name="T:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole">
-            <summary>
-            ロール(IdentityRoleから追記実装)
-            </summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole.TagCD">
-            <summary>分類</summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole.Description">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole.OrderSort">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole.Enabled">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole.CreateTime">
-            <summary></summary>
-        </member>
-        <member name="T:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser">
-            <summary>
-            ユーザーモデル(IdentityUserから追記実装)
-            </summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.LgCode">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.LgKaKakari">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.FirstName">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.LastName">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.IsAdmin">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.IsChiiki">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.UserRoles">
-            <summary></summary>
-        </member>
-        <member name="T:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUserRole">
-            <summary>
-            ユーザーロール
-            </summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUserRole.User">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUserRole.Role">
-            <summary></summary>
-        </member>
-        <member name="T:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村">
-             <summary>
-            
-             </summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.ID">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.市区町村CD">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.都道府県CD">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.都道府県名">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.市区町村名">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.郵便番号">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.住所">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.メモ">
-            <summary></summary>
-        </member>
-        <member name="T:RcrsCore.IdentityServer.Models.DomainEntity.M_都道府県">
-             <summary>
-            
-             </summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_都道府県.ID">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_都道府県.都道府県CD">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_都道府県.都道府県名">
-            <summary></summary>
         </member>
         <member name="T:RcrsCore.IdentityServer.Models.Identity.AccountOptions">
             <summary>

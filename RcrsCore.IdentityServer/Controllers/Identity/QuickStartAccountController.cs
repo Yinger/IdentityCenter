@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using RcrsCore.IdentityServer.Models.DomainEntity;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
 using RcrsCore.IdentityServer.Models.Identity;
 
 namespace RcrsCore.IdentityServer.Controllers.Identity

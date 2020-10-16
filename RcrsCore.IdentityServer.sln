@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RcrsCore.IdentityServer", "RcrsCore.IdentityServer/RcrsCore.IdentityServer.csproj", "{93B1441B-74EC-4506-80DD-83C9DC3A3F15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RcrsCore.IdentityServer", "RcrsCore.IdentityServer\RcrsCore.IdentityServer.csproj", "{93B1441B-74EC-4506-80DD-83C9DC3A3F15}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RcrsCore.IdentityServer.Dto", "RcrsCore.IdentityServer.Dto\RcrsCore.IdentityServer.Dto.csproj", "{DEAB151A-B496-4252-8787-329FF81FB553}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{93B1441B-74EC-4506-80DD-83C9DC3A3F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93B1441B-74EC-4506-80DD-83C9DC3A3F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93B1441B-74EC-4506-80DD-83C9DC3A3F15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEAB151A-B496-4252-8787-329FF81FB553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEAB151A-B496-4252-8787-329FF81FB553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEAB151A-B496-4252-8787-329FF81FB553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEAB151A-B496-4252-8787-329FF81FB553}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

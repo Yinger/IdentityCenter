@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RcrsCore.IdentityServer.Models.DomainEntity;
+using RcrsCore.IdentityServer.Dto.DomainModel.City;
 
 namespace RcrsCore.IdentityServer.Models
 {

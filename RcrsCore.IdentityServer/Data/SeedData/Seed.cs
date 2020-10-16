@@ -8,8 +8,8 @@ using IdentityServer4.EntityFramework.Mappers;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
 using RcrsCore.IdentityServer.Models;
-using RcrsCore.IdentityServer.Models.DomainEntity;
 
 namespace RcrsCore.IdentityServer.Data.SeedData
 {

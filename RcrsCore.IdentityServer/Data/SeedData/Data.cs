@@ -2,7 +2,8 @@
 using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
-using RcrsCore.IdentityServer.Models.DomainEntity;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
+using RcrsCore.IdentityServer.Dto.DomainModel.City;
 
 namespace RcrsCore.IdentityServer.Data.SeedData
 {

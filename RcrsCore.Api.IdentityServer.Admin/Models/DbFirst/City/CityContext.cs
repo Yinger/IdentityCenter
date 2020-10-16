@@ -34,24 +34,24 @@ namespace RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.City
             {
                 entity.ToTable("M_市区町村");
 
-                entity.Property(e => e.Id)
+                entity.Property(e => e.ID)
                     .HasColumnName("ID")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.市区町村cd).HasColumnName("市区町村CD");
+                entity.Property(e => e.市区町村CD).HasColumnName("市区町村CD");
 
-                entity.Property(e => e.都道府県cd).HasColumnName("都道府県CD");
+                entity.Property(e => e.都道府県CD).HasColumnName("都道府県CD");
             });
 
             modelBuilder.Entity<M_都道府県>(entity =>
             {
                 entity.ToTable("M_都道府県");
 
-                entity.Property(e => e.Id)
+                entity.Property(e => e.ID)
                     .HasColumnName("ID")
                     .ValueGeneratedNever();
 
-                entity.Property(e => e.都道府県cd).HasColumnName("都道府県CD");
+                entity.Property(e => e.都道府県CD).HasColumnName("都道府県CD");
             });
 
             OnModelCreatingPartial(modelBuilder);

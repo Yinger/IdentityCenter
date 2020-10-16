@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
 using RcrsCore.IdentityServer.Helper;
-using RcrsCore.IdentityServer.Models.DomainEntity;
 
 namespace RcrsCore.IdentityServer.Extensions.IdentityServer
 {

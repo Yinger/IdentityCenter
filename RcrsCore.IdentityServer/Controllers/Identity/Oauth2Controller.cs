@@ -6,8 +6,8 @@ using IdentityServer4.Stores;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
 using RcrsCore.IdentityServer.Extensions.IdentityServer;
-using RcrsCore.IdentityServer.Models.DomainEntity;
 using RcrsCore.IdentityServer.Models.Identity;
 
 namespace RcrsCore.IdentityServer.Controllers.Identity

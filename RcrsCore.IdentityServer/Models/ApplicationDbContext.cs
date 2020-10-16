@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using RcrsCore.IdentityServer.Models.DomainEntity;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
 
 namespace RcrsCore.IdentityServer.Models
 {
