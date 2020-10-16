@@ -5,9 +5,9 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using IdentityModel;
 using Microsoft.AspNetCore.Identity;
-using RcrsCore.Api.IdentityServer.Admin.Dto;
+using RcrsCore.IdentityServer.Dto;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
 using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application;
-using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Biz
 {

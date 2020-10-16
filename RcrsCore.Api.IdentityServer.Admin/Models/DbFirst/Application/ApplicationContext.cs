@@ -2,9 +2,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
 using RcrsCore.Api.IdentityServer.Admin.Helper;
-using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application
 {

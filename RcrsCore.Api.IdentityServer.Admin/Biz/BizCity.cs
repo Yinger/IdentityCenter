@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using RcrsCore.IdentityServer.Dto.DomainModel.City;
 using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.City;
-using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.City.Entity;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Biz
 {

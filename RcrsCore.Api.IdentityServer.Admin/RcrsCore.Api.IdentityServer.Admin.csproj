@@ -13,8 +13,8 @@
     <PackageReference Include="Devart.Data.SQLite.EFCore" Version="5.15.1612" />
     <PackageReference Include="Devart.Data.SQLite.EFCore.Design" Version="5.15.1612" />
     <PackageReference Include="IdentityServer4.EntityFramework" Version="3.1.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -24,6 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RcrsCore.Api.IdentityServer.Admin.Dto\RcrsCore.Api.IdentityServer.Admin.Dto.csproj" />
+    <ProjectReference Include="..\RcrsCore.IdentityServer.Dto\RcrsCore.IdentityServer.Dto.csproj" />
   </ItemGroup>
 </Project>

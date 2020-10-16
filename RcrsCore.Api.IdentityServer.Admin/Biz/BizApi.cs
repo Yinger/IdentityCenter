@@ -3,8 +3,8 @@ using System.Linq;
 using IdentityServer4.EntityFramework.DbContexts;
 using IdentityServer4.EntityFramework.Entities;
 using Microsoft.EntityFrameworkCore;
-using RcrsCore.Api.IdentityServer.Admin.Dto;
-using RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api;
+using RcrsCore.IdentityServer.Dto;
+using RcrsCore.IdentityServer.Dto.ViewModel.Api;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Biz
 {

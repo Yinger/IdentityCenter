@@ -2,7 +2,7 @@
 using System.IO;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using RcrsCore.Api.IdentityServer.Admin.Dto;
+using RcrsCore.IdentityServer.Dto;
 using RcrsCore.Api.IdentityServer.Admin.Helper;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Extensions.Swagger

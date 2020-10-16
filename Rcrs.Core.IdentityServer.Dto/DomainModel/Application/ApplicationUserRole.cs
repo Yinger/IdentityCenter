@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
-using System.Collections.Generic;
 
-namespace RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity
+namespace RcrsCore.IdentityServer.Dto.DomainModel.Application
 {
     //---------------------------------------------------------------
     /// <summary>

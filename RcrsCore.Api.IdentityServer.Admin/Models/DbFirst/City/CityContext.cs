@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using RcrsCore.IdentityServer.Dto.DomainModel.City;
 using RcrsCore.Api.IdentityServer.Admin.Helper;
-using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.City.Entity;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.City
 {

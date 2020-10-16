@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.City.Entity
+namespace RcrsCore.IdentityServer.Dto.DomainModel.City
 {
-    public partial class M_都道府県
+    public class M_都道府県
     {
         public long Id { get; set; }
         public string 都道府県cd { get; set; }

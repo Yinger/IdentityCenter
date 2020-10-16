@@ -18,7 +18,7 @@
             </summary>
             <param name="configurationDbContext"></param>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizApi.GetApi(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiSearchModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizApi.GetApi(RcrsCore.IdentityServer.Dto.ViewModel.Api.ApiSearchModel)">
             <summary>
             Api一覧を取得します。
             </summary>
@@ -46,7 +46,7 @@
             <param name="api"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizApi.SaveEdit(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizApi.SaveEdit(RcrsCore.IdentityServer.Dto.ViewModel.Api.ApiViewModel)">
             <summary>
             APIを保存します。
             </summary>
@@ -167,7 +167,7 @@
             </summary>
             <param name="configurationDbContext"></param>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizClient.GetClient(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientSearchModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizClient.GetClient(RcrsCore.IdentityServer.Dto.ViewModel.Client.ClientSearchModel)">
             <summary>
             クライアント一覧を取得します。
             </summary>
@@ -195,7 +195,7 @@
             <param name="client"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizClient.SaveEdit(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizClient.SaveEdit(RcrsCore.IdentityServer.Dto.ViewModel.Client.ClientViewModel)">
             <summary>
             編集を保存します。
             </summary>
@@ -268,14 +268,14 @@
         <member name="F:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole._roleManager">
             <summary></summary>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.#ctor(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext,Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole})">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.#ctor(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext,Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationRole})">
             <summary>
             初期化します。
             </summary>
             <param name="roleContext"></param>
             <param name="roleManager"></param>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.GetRoleList(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.RoleSearchModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.GetRoleList(RcrsCore.IdentityServer.Dto.ViewModel.RoleSearchModel)">
             <summary>
             ロール一覧を取得
             </summary>
@@ -309,28 +309,28 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.CreateAsync(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.CreateAsync(RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationRole)">
             <summary>
             ロールを新規します。
             </summary>
             <param name="role"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.UpdateAsync(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.UpdateAsync(RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationRole)">
             <summary>
             ロールを更新します。
             </summary>
             <param name="role"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.RemoveRole(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.RemoveRole(RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationRole)">
             <summary>
             ロールを削除します。
             </summary>
             <param name="role"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.GetRoleListExceptCurrentUserUsed(System.String,RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.RoleSearchModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizRole.GetRoleListExceptCurrentUserUsed(System.String,RcrsCore.IdentityServer.Dto.ViewModel.RoleSearchModel)">
             <summary>
             ユーザーのロール追加時にロール一覧を取得します。
             (既有のロール非表示します)
@@ -360,14 +360,14 @@
         <member name="F:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser._bizClaim">
             <summary></summary>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.#ctor(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext,Microsoft.AspNetCore.Identity.UserManager{RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser})">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.#ctor(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext,Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser})">
             <summary>
             初期化します。
             </summary>
             <param name="applicationContext"></param>
             <param name="userManager">APIs for managing user</param>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.GetUserList(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserSearchModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.GetUserList(RcrsCore.IdentityServer.Dto.ViewModel.User.UserSearchModel)">
             <summary>
             アカウント一覧を取得します。
             </summary>
@@ -403,14 +403,14 @@
             <param name="userName"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.CreateUser(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.CreateUser(RcrsCore.IdentityServer.Dto.ViewModel.User.UserViewModel)">
             <summary>
             ユーザーを新規します。
             </summary>
             <param name="viewModel"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.EditUser(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.EditUser(RcrsCore.IdentityServer.Dto.ViewModel.User.UserViewModel)">
             <summary>
             ユーザー情報を更新行います。
             </summary>
@@ -440,7 +440,7 @@
             <param name="roleName"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.mapperEntityToViewModel(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.mapperEntityToViewModel(RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser)">
             <summary>
             Map ApplicationUser to UserViewModel
             </summary>
@@ -458,14 +458,14 @@
         <member name="F:RcrsCore.Api.IdentityServer.Admin.Biz.BizUserClaims._applicationDbContext">
             <summary></summary>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUserClaims.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser},RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUserClaims.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser},RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext)">
             <summary>
             初期化します。
             </summary>
             <param name="userManager"></param>
             <param name="applicationDbContext"></param>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUserClaims.RefreshUserClaims(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUserClaims.RefreshUserClaims(RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser)">
             <summary>
             ユーザーのクレームを更新行います。
             （既存の削除して、クレームを再作成します。）
@@ -480,14 +480,14 @@
             <param name="userId"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUserClaims.RemoveUserAllClaims(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUserClaims.RemoveUserAllClaims(RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser)">
             <summary>
             クレームを全削除行います。
             </summary>
             <param name="user"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUserClaims.AddUserClaimsAsync(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUserClaims.AddUserClaimsAsync(RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser)">
             <summary>
             AspNetUserClaimsにclaimを追加します。
             </summary>
@@ -551,7 +551,7 @@
             <param name="name">API名</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ApiResourceController.Search(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiSearchModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ApiResourceController.Search(RcrsCore.IdentityServer.Dto.ViewModel.Api.ApiSearchModel)">
             <summary>
             検索行います
             </summary>
@@ -566,7 +566,7 @@
             <param name="desc">説明</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ApiResourceController.Edit(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ApiResourceController.Edit(RcrsCore.IdentityServer.Dto.ViewModel.Api.ApiViewModel)">
             <summary>
             保存行います。
             (スコープとクレームは別途で管理ので、空のまま保存大丈夫です。)
@@ -681,28 +681,28 @@
             <param name="name">クライアント名</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.Search(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientSearchModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.Search(RcrsCore.IdentityServer.Dto.ViewModel.Client.ClientSearchModel)">
             <summary>
             検索行います
             </summary>
             <param name="condition">検索条件</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.CreateMvc(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.CreateMvc(RcrsCore.IdentityServer.Dto.ViewModel.Client.ClientViewModel)">
             <summary>
             MVC型のクライアントを作成します。（付与タイプ：authorization code）
             </summary>
             <param name="viewModel">クライアント</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.CreateJavaScript(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.CreateJavaScript(RcrsCore.IdentityServer.Dto.ViewModel.Client.ClientViewModel)">
             <summary>
             JavaScript型のクライアントを作成します。（付与タイプ：authorization code）
             </summary>
             <param name="viewModel">クライアント</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.Edit(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.Edit(RcrsCore.IdentityServer.Dto.ViewModel.Client.ClientViewModel)">
             <summary>
             保存行います。
             (クライアント種類は固定ので、変更しても保存しません)
@@ -753,7 +753,7 @@
             <param name="scope">スコープ</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.create(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel,System.String)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.create(RcrsCore.IdentityServer.Dto.ViewModel.Client.ClientViewModel,System.String)">
             <summary>
             クライアントを作成します
             </summary>
@@ -761,7 +761,7 @@
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.convertViewToClient(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel,System.String)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.ClientController.convertViewToClient(RcrsCore.IdentityServer.Dto.ViewModel.Client.ClientViewModel,System.String)">
             <summary>
             ClientViewModel→Client
             </summary>
@@ -780,7 +780,7 @@
         <member name="F:RcrsCore.Api.IdentityServer.Admin.Controllers.RoleController._bizUserClaim">
             <summary></summary>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.RoleController.#ctor(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext,Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole},Microsoft.AspNetCore.Identity.UserManager{RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser})">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.RoleController.#ctor(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext,Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationRole},Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser})">
             <summary>
             初期化します。
             </summary>
@@ -808,21 +808,21 @@
             <param name="name">ロール名</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.RoleController.Search(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.RoleSearchModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.RoleController.Search(RcrsCore.IdentityServer.Dto.ViewModel.RoleSearchModel)">
             <summary>
             検索行います
             </summary>
             <param name="condition">検索条件</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.RoleController.Create(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Role.RoleViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.RoleController.Create(RcrsCore.IdentityServer.Dto.ViewModel.Role.RoleViewModel)">
             <summary>
             新規行います。
             </summary>
             <param name="viewRole">ロール</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.RoleController.SaveEdit(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Role.RoleViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.RoleController.SaveEdit(RcrsCore.IdentityServer.Dto.ViewModel.Role.RoleViewModel)">
             <summary>
             保存行います。
             </summary>
@@ -851,7 +851,7 @@
         <member name="F:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController._bizUser">
             <summary></summary>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser},RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser},RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext)">
             <summary>
             初期化します。
             </summary>
@@ -886,21 +886,21 @@
             <param name="isEqual">全等フラグ</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.Search(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserSearchModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.Search(RcrsCore.IdentityServer.Dto.ViewModel.User.UserSearchModel)">
             <summary>
             検索行います
             </summary>
             <param name="condition">検索条件</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.Create(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.Create(RcrsCore.IdentityServer.Dto.ViewModel.User.UserViewModel)">
             <summary>
             新しいアカウントを作成します。
             </summary>
             <param name="viewUser">ユーザー情報</param>
             <returns></returns>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.Edit(RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.Edit(RcrsCore.IdentityServer.Dto.ViewModel.User.UserViewModel)">
             <summary>
             ユーザーを更新します。
             （ユーザーのロール情報は別途で管理します）
@@ -926,7 +926,7 @@
         <member name="F:RcrsCore.Api.IdentityServer.Admin.Controllers.UserRoleController._bizUser">
             <summary></summary>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserRoleController.#ctor(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext,Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole},Microsoft.AspNetCore.Identity.UserManager{RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser})">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserRoleController.#ctor(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext,Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationRole},Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser})">
             <summary>
             初期化します。
             </summary>
@@ -1011,63 +1011,6 @@
             <typeparam name="T"></typeparam>
             <param name="sections"></param>
             <returns></returns>
-        </member>
-        <member name="T:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole">
-            <summary>
-            ロール(IdentityRoleから追記実装)
-            </summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole.TagCD">
-            <summary>分類</summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole.Description">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole.OrderSort">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole.Enabled">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationRole.CreateTime">
-            <summary></summary>
-        </member>
-        <member name="T:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser">
-            <summary>
-            ユーザーモデル(IdentityUserから追記実装)
-            </summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser.LgCode">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser.LgKaKakari">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser.FirstName">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser.LastName">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser.IsAdmin">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser.IsChiiki">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUser.UserRoles">
-            <summary></summary>
-        </member>
-        <member name="T:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUserRole">
-            <summary>
-            ユーザーロール
-            </summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUserRole.User">
-            <summary></summary>
-        </member>
-        <member name="P:RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity.ApplicationUserRole.Role">
-            <summary></summary>
         </member>
         <member name="T:RcrsCore.Api.IdentityServer.Admin.Startup">
             <summary>

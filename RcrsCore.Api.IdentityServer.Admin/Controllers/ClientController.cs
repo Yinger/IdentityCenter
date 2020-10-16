@@ -4,9 +4,9 @@ using IdentityServer4.EntityFramework.DbContexts;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.Models;
 using Microsoft.AspNetCore.Mvc;
+using RcrsCore.IdentityServer.Dto;
+using RcrsCore.IdentityServer.Dto.ViewModel.Client;
 using RcrsCore.Api.IdentityServer.Admin.Biz;
-using RcrsCore.Api.IdentityServer.Admin.Dto;
-using RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Controllers
 {

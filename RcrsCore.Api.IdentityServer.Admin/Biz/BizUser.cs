@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using RcrsCore.Api.IdentityServer.Admin.Dto;
-using RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User;
+using RcrsCore.IdentityServer.Dto;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
+using RcrsCore.IdentityServer.Dto.ViewModel.User;
 using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application;
-using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Biz
 {

@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RcrsCore.Api.IdentityServer.Admin.Dto;
+using RcrsCore.IdentityServer.Dto;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
 using RcrsCore.Api.IdentityServer.Admin.Extensions.IdentityServer;
 using RcrsCore.Api.IdentityServer.Admin.Extensions.Swagger;
 using RcrsCore.Api.IdentityServer.Admin.Helper;
 using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application;
-using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity;
 using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.City;
 
 namespace RcrsCore.Api.IdentityServer.Admin

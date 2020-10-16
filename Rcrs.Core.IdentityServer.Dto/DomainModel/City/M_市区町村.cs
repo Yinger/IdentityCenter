@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.City.Entity
+namespace RcrsCore.IdentityServer.Dto.DomainModel.City
 {
-    public partial class M_市区町村
+    public class M_市区町村
     {
         public long Id { get; set; }
         public string 市区町村cd { get; set; }

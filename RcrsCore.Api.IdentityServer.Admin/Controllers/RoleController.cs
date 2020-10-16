@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using RcrsCore.IdentityServer.Dto;
+using RcrsCore.IdentityServer.Dto.DomainModel.Application;
+using RcrsCore.IdentityServer.Dto.ViewModel;
+using RcrsCore.IdentityServer.Dto.ViewModel.Role;
 using RcrsCore.Api.IdentityServer.Admin.Biz;
-using RcrsCore.Api.IdentityServer.Admin.Dto;
-using RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel;
-using RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Role;
 using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application;
-using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.Entity;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Controllers
 {
