@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RcrsCore.Api.IdentityServer.Admin.Dto</name>
+    </assembly>
+    <members>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst">
+            <summary>
+            システムの定数クラスです。
+            </summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.DefaultPassword">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.ApiName">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.DefaultRole">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.DefaultSecret">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.CustomJwtClaimTypes">
+            <summary>
+            Customize JwtClaimTypesの定数
+            </summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.CustomJwtClaimTypes.LgCode">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.CustomJwtClaimTypes.UserId">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.CustomJwtClaimTypes.Name">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.CustomJwtClaimTypes.Role">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.CustomJwtClaimTypes.DefaultClaimTypes">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.Scopes">
+            <summary>
+            Customize Scopesの定数
+            </summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.Scopes.LgCode">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.Scopes.Role">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.Scopes.RoleName">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.Scopes.UserId">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.Scopes.OpenId">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.Scopes.Profile">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.Scopes.Email">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.ClientType">
+            <summary>
+            クライアント種類の定数
+            </summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.ClientType.MVC">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Dto.IdentityConst.ClientType.JavaScript">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.MessageModel`1">
+            <summary>
+            戻る用のメッセージモデル
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.MessageModel`1.Status">
+            <summary>レスポンスステータスコード</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.MessageModel`1.Success">
+            <summary>成功かどうか</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.MessageModel`1.Msg">
+            <summary>メッセージ</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.MessageModel`1.Response">
+            <summary>戻るのデータ</summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiSearchModel">
+            <summary>
+            API検索条件モデル
+            </summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiSearchModel.ApiName">
+            <summary>表示名</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiSearchModel.Description">
+            <summary>説明</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiSearchModel.ScopeName">
+            <summary>スコープ名</summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiViewModel">
+            <summary>
+            Apiモデル
+            </summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiViewModel.Id">
+            <summary>Id</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiViewModel.Name">
+            <summary>英字と数字また「.」入力可能</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiViewModel.Description">
+            <summary>説明</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiViewModel.ListScope">
+            <summary>スコープリスト</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Api.ApiViewModel.ListClaim">
+            <summary>クレーム</summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientSearchModel">
+            <summary>
+            クライアント検索条件モデル
+            </summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientSearchModel.ClientName">
+            <summary>クライアント名</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientSearchModel.Type">
+            <summary>クライアント種類（定数：MVC or JavaScript）</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientSearchModel.Description">
+            <summary>説明</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientSearchModel.ClientUri">
+            <summary>URI</summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel">
+            <summary>
+            クライアントモデル
+            </summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel.ID">
+            <summary>ID</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel.Name">
+            <summary>英字と数字また「.」入力可能</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel.Type">
+            <summary>クライアント種類（定数：MVC or JavaScript）</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel.Description">
+            <summary>説明</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel.ClientUri">
+            <summary>URI</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel.RedirectUri">
+            <summary>where to redirect to after login</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel.PostLogoutRedirectUri">
+            <summary>where to redirect to after logout</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Client.ClientViewModel.ListScope">
+            <summary>スコープリスト</summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.RoleSearchModel">
+            <summary>
+            ロールの検索条件クラスです。
+            </summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.RoleSearchModel.RoleName">
+            <summary>ロール名</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.RoleSearchModel.Tag">
+            <summary>分類用のタグ</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.RoleSearchModel.Description">
+            <summary>説明</summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Role.RoleViewModel">
+            <summary>
+            ロール
+            </summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Role.RoleViewModel.Id">
+            <summary>Id</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Role.RoleViewModel.RoleName">
+            <summary>ロール名</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Role.RoleViewModel.Tag">
+            <summary>タグ</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.Role.RoleViewModel.Description">
+            <summary>説明</summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserSearchModel">
+            <summary>
+            ユーザー検索条件モデル
+            </summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserSearchModel.LoginName">
+            <summary>ユーザー名</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserSearchModel.Email">
+            <summary>メールアドレス</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserSearchModel.LgCode">
+            <summary>市区町村</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserSearchModel.LgKaKakari">
+            <summary>所属課</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserSearchModel.RoleName">
+            <summary>ロール名</summary>
+        </member>
+        <member name="T:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel">
+            <summary>
+            ユーザーモデル
+            </summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel.Id">
+            <summary>Id</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel.LoginName">
+            <summary>ユーザー名</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel.Email">
+            <summary>メールアドレス</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel.LgCode">
+            <summary>市区町村</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel.LgKaKakari">
+            <summary>所属課</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel.ListRole">
+            <summary>ロール</summary>
+        </member>
+        <member name="P:RcrsCore.Api.IdentityServer.Admin.Dto.ViewModel.User.UserViewModel.ListClaim">
+            <summary>クレーム</summary>
+        </member>
+    </members>
+</doc>

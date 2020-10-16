@@ -1,0 +1,657 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RcrsCore.IdentityServer</name>
+    </assembly>
+    <members>
+        <member name="T:RcrsCore.IdentityServer.Controllers.HomeController">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.HomeController.Index">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Controllers.Identity.Oauth2Controller">
+            <summary>
+            認証コントローラー
+            </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.Oauth2Controller.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole},Microsoft.AspNetCore.Identity.SignInManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser},IdentityServer4.Services.IIdentityServerInteractionService,IdentityServer4.Stores.IClientStore,Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider,IdentityServer4.Services.IEventService)">
+            <summary>
+            初期化します。
+            </summary>
+            <param name="userManager">APIs for managing user</param>
+            <param name="roleManager">APIs for managing roles</param>
+            <param name="signInManager">APIs for user sign in</param>
+            <param name="interaction">services be used by the user interface to communicate with IdentityServer</param>
+            <param name="clientStore">client configuration</param>
+            <param name="schemeProvider">managing what authenticationSchemes are supported</param>
+            <param name="events">event service</param>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.Oauth2Controller.Authorize(System.String)">
+            <summary>
+            Show login page
+            </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.Oauth2Controller.Authorize(RcrsCore.IdentityServer.Models.Identity.LoginInputModel,System.String)">
+            <summary>
+            Handle postback from username/password login
+            </summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController">
+            <summary>
+            IdentityServerのQuickStartの共通コントローラー
+            </summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController._userManager">
+            <summary>APIs for managing user</summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController._roleManager">
+            <summary>APIs for managing roles</summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController._signInManager">
+            <summary>APIs for user sign in</summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController._interaction">
+            <summary>services be used by the user interface to communicate with IdentityServer</summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController._clientStore">
+            <summary>client configuration</summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController._schemeProvider">
+            <summary>managing what authenticationSchemes are supported</summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController._events">
+            <summary>event service</summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole},Microsoft.AspNetCore.Identity.SignInManager{RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser},IdentityServer4.Services.IIdentityServerInteractionService,IdentityServer4.Stores.IClientStore,Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider,IdentityServer4.Services.IEventService)">
+            <summary>
+            初期化します。
+            </summary>
+            <param name="userManager">APIs for managing user</param>
+            <param name="roleManager">APIs for managing roles</param>
+            <param name="signInManager">APIs for user sign in</param>
+            <param name="interaction">services be used by the user interface to communicate with IdentityServer</param>
+            <param name="clientStore">client configuration</param>
+            <param name="schemeProvider">managing what authenticationSchemes are supported</param>
+            <param name="events">event service</param>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.ExternalLogin(System.String,System.String)">
+            <summary>
+            initiate roundtrip to external authentication provider
+            </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.ExternalLoginCallback">
+            <summary>
+            Post processing of external authentication
+            </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.BuildLoginViewModelAsync(System.String)">
+            <summary>
+            LoginViewModelを作ります。
+            </summary>
+            <param name="returnUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.BuildLoginViewModelAsync(RcrsCore.IdentityServer.Models.Identity.LoginInputModel)">
+            <summary>
+            LoginViewModelを作ります。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.BuildLogoutViewModelAsync(System.String)">
+            <summary>
+            LogoutViewModelを作ります。
+            </summary>
+            <param name="logoutId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.BuildLoggedOutViewModelAsync(System.String)">
+            <summary>
+            LogoutViewModelを作ります。
+            </summary>
+            <param name="logoutId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.processWindowsLoginAsync(System.String)">
+            <summary>
+            windows login
+            </summary>
+            <param name="returnUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.findUserFromExternalProviderAsync(Microsoft.AspNetCore.Authentication.AuthenticateResult)">
+            <summary>
+            find external user
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.autoProvisionUserAsync(System.String,System.String,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
+            <summary>
+            ユーザーの情報を作成します。
+            </summary>
+            <param name="provider"></param>
+            <param name="providerUserId"></param>
+            <param name="claims"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.processLoginCallbackForOidc(Microsoft.AspNetCore.Authentication.AuthenticateResult,System.Collections.Generic.List{System.Security.Claims.Claim},Microsoft.AspNetCore.Authentication.AuthenticationProperties)">
+            <summary>
+            oidc callback
+            </summary>
+            <param name="externalResult"></param>
+            <param name="localClaims"></param>
+            <param name="localSignInProps"></param>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.processLoginCallbackForWsFed(Microsoft.AspNetCore.Authentication.AuthenticateResult,System.Collections.Generic.List{System.Security.Claims.Claim},Microsoft.AspNetCore.Authentication.AuthenticationProperties)">
+            <summary>
+            WsFed callback
+            </summary>
+            <param name="externalResult"></param>
+            <param name="localClaims"></param>
+            <param name="localSignInProps"></param>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Controllers.Identity.QuickStartAccountController.processLoginCallbackForSaml2p(Microsoft.AspNetCore.Authentication.AuthenticateResult,System.Collections.Generic.List{System.Security.Claims.Claim},Microsoft.AspNetCore.Authentication.AuthenticationProperties)">
+            <summary>
+            Saml2p callback
+            </summary>
+            <param name="externalResult"></param>
+            <param name="localClaims"></param>
+            <param name="localSignInProps"></param>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Data.SeedData.Data">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Data.SeedData.Data.GetIdentityResources">
+            <summary>
+            scopes define the resources in your system
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Data.SeedData.Data.GetApiResources">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Data.SeedData.Data.GetClients">
+            <summary>
+            clients want to access resources (aka scopes)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Data.SeedData.Data.GetRoles">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Data.SeedData.Data.GetUsers">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Data.SeedData.Data.GetKans">
+            <summary>
+            都道府県
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Data.SeedData.Data.GetCity">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Data.SeedData.Seed">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Data.SeedData.Seed.EnsureSeedData(System.IServiceProvider)">
+            <summary>
+            テスト用データを自動生成します。
+            </summary>
+            <param name="serviceProvider"></param>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Data.SeedData.Seed.ensureSeedData(IdentityServer4.EntityFramework.DbContexts.ConfigurationDbContext)">
+            <summary>
+            scopes、api、client seed します。
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Data.SeedData.Seed.ensureSeedData(RcrsCore.IdentityServer.Models.CityDbContext)">
+            <summary>
+            M_都道府県、M_市区町村を初期化します。
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Extensions.IdentityServer.IdentityServer4Setup">
+            <summary>
+            IdentityServer4に関係の設定クラスです。
+            </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Extensions.IdentityServer.IdentityServer4Setup.AddIdentityServer4Setup(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Setup by Startup
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Helper.AppSettingsHelper">
+            <summary>
+            appsettings.json の操作を簡単化
+            </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Helper.AppSettingsHelper.#ctor(System.String)">
+            <summary>
+            初期化
+            </summary>
+            <param name="contentPath"></param>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Helper.AppSettingsHelper.App(System.String[])">
+            <summary>
+            設定を取得します。
+            </summary>
+            <param name="sections"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Helper.AppSettingsHelper.App``1(System.String[])">
+            <summary>
+            設定を一括取得します。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="sections"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.IdentityConst">
+            <summary>
+            システムの定数クラスです。
+            </summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.DefaultPassword">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.ApiName">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.IdentityConst.CustomJwtClaimTypes">
+            <summary>
+            Customize JwtClaimTypesの定数
+            </summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.CustomJwtClaimTypes.LgCode">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.CustomJwtClaimTypes.UserId">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.CustomJwtClaimTypes.Name">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.CustomJwtClaimTypes.Role">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.CustomJwtClaimTypes.DefaultClaimTypes">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.IdentityConst.Scopes">
+            <summary>
+            Customize Scopesの定数
+            </summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.Scopes.LgCode">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.Scopes.Role">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.Scopes.RoleName">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.Scopes.UserId">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.Scopes.OpenId">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.Scopes.Profile">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.Scopes.Email">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.IdentityConst.Scopes.ClientDefaultScopes">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.ApplicationDbContext">
+            <summary>
+            Entity Framework database context used for identity
+            </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Models.ApplicationDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{RcrsCore.IdentityServer.Models.ApplicationDbContext})">
+            <summary>
+            初期化します。
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Models.ApplicationDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            テーブル作成時に自動実行します。
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.CityDbContext">
+            <summary>
+            都道府県 市区町村
+            </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.CityDbContext.M_都道府県s">
+            <summary>都道府県</summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.CityDbContext.M_市区町村s">
+            <summary>市区町村</summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Models.CityDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{RcrsCore.IdentityServer.Models.CityDbContext})">
+            <summary>
+            初期化します。
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole">
+            <summary>
+            ロール(IdentityRoleから追記実装)
+            </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole.TagCD">
+            <summary>分類</summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole.Description">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole.OrderSort">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole.Enabled">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationRole.CreateTime">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser">
+            <summary>
+            ユーザーモデル(IdentityUserから追記実装)
+            </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.LgCode">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.LgKaKakari">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.FirstName">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.LastName">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.IsAdmin">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.IsChiiki">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUser.UserRoles">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUserRole">
+            <summary>
+            ユーザーロール
+            </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUserRole.User">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.ApplicationUserRole.Role">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.ID">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.市区町村CD">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.都道府県CD">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.都道府県名">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.市区町村名">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.郵便番号">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.住所">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_市区町村.メモ">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.DomainEntity.M_都道府県">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_都道府県.ID">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_都道府県.都道府県CD">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.DomainEntity.M_都道府県.都道府県名">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.Identity.AccountOptions">
+            <summary>
+            アカウント関数
+            </summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Models.Identity.AccountOptions.AllowLocalLogin">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Models.Identity.AccountOptions.AllowRememberLogin">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Models.Identity.AccountOptions.RememberMeLoginDuration">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Models.Identity.AccountOptions.ShowLogoutPrompt">
+            <summary></summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Models.Identity.AccountOptions.AutomaticRedirectAfterSignOut">
+            <summary>元々の項目へ自動Redirect</summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Models.Identity.AccountOptions.WindowsAuthenticationSchemeName">
+            <summary>specify the Windows authentication scheme being used</summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Models.Identity.AccountOptions.IncludeWindowsGroups">
+            <summary>if user uses windows auth, should we load the groups from windows</summary>
+        </member>
+        <member name="F:RcrsCore.IdentityServer.Models.Identity.AccountOptions.InvalidCredentialsErrorMessage">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.Identity.ExternalProvider">
+            <summary>
+            外部認証Provider（ex:Google，Facebook，Twitter，Microsoft Account）
+            </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.ExternalProvider.DisplayName">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.ExternalProvider.AuthenticationScheme">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.Identity.LoggedOutViewModel">
+            <summary>
+            Logout後表示用のモデル
+            </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoggedOutViewModel.PostLogoutRedirectUri">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoggedOutViewModel.ClientName">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoggedOutViewModel.SignOutIframeUrl">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoggedOutViewModel.AutomaticRedirectAfterSignOut">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoggedOutViewModel.LogoutId">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoggedOutViewModel.TriggerExternalSignout">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoggedOutViewModel.ExternalAuthenticationScheme">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.Identity.LoginInputModel">
+            <summary>
+            ログイン時の入力関数
+            </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoginInputModel.UserName">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoginInputModel.Password">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoginInputModel.RememberLogin">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoginInputModel.ReturnUrl">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.Identity.LoginViewModel">
+            <summary>
+            登録表示のモデルです。
+            </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoginViewModel.AllowRememberLogin">
+            <summary>アカウントを記憶する</summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoginViewModel.EnableLocalLogin">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoginViewModel.ExternalProviders">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoginViewModel.VisibleExternalProviders">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoginViewModel.IsExternalLoginOnly">
+            <summary></summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LoginViewModel.ExternalLoginScheme">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.Identity.LogoutInputModel">
+            <summary>
+            Logout Redirct用
+            </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LogoutInputModel.LogoutId">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.Identity.LogoutViewModel">
+            <summary>
+            logout確認設定用
+            </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.LogoutViewModel.ShowLogoutPrompt">
+            <summary>trueの場合確認の画面が表示する</summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Models.Identity.RedirectViewModel">
+            <summary>
+            callback url
+            </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Models.Identity.RedirectViewModel.RedirectUrl">
+            <summary></summary>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Program">
+            <summary>
+            システムはここから始まります。
+            </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Program.Main(System.String[])">
+            <summary>
+            開始方法
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Configureします。
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RcrsCore.IdentityServer.Startup">
+             <summary>
+             add-migration InitialIdentityServerPersistedGrantDbMigration -c PersistedGrantDbContext -o Data/Migrations/IdentityServer
+             add-migration InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/IdentityServer
+             add-migration AppDbMigration -c ApplicationDbContext -o Data/Migrations/Application
+             add-migration CityDbMigration -c CityDbContext -o Data/Migrations/City
+            
+             update-database -c PersistedGrantDbContext
+             update-database -c ConfigurationDbContext
+             update-database -c ApplicationDbContext
+             update-database -c CityDbContext
+            
+             *** Remove-Migration -c ApplicationDbContext *** ←削除用
+             </summary>
+        </member>
+        <member name="P:RcrsCore.IdentityServer.Startup.Configuration">
+            <summary> Configuration </summary>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            初期化します。
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime.
+            Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:RcrsCore.IdentityServer.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime.
+            Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
