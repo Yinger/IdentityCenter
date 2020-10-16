@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RcrsCore.IdentityServer", "RcrsCore.IdentityServer.csproj", "{93B1441B-74EC-4506-80DD-83C9DC3A3F15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RcrsCore.IdentityServer", "RcrsCore.IdentityServer/RcrsCore.IdentityServer.csproj", "{93B1441B-74EC-4506-80DD-83C9DC3A3F15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
