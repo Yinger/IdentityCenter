@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RcrsCore.IdentityServer", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RcrsCore.IdentityServer.Dto", "RcrsCore.IdentityServer.Dto\RcrsCore.IdentityServer.Dto.csproj", "{DEAB151A-B496-4252-8787-329FF81FB553}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RcrsCore.Api.IdentityServer.Admin", "RcrsCore.Api.IdentityServer.Admin\RcrsCore.Api.IdentityServer.Admin.csproj", "{4812A653-1F74-4C58-A37B-4A47E05EAAFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DEAB151A-B496-4252-8787-329FF81FB553}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEAB151A-B496-4252-8787-329FF81FB553}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEAB151A-B496-4252-8787-329FF81FB553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4812A653-1F74-4C58-A37B-4A47E05EAAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4812A653-1F74-4C58-A37B-4A47E05EAAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4812A653-1F74-4C58-A37B-4A47E05EAAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4812A653-1F74-4C58-A37B-4A47E05EAAFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
