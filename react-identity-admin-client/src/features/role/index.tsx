@@ -1,7 +1,7 @@
 import React from "react";
 
 const Role = () => {
-  return <>Client</>;
+  return <>Role</>;
 };
 
 export default Role;
