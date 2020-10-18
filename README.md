@@ -1,13 +1,13 @@
 # 数据库表解析
 
-## 一 操作
+## （一） 操作
 
 对授权的体现，授权时自动添加
 
 - DeviceCodes
 - PersistedGrants
 
-## 二 配置（资源）
+## （二） 配置（资源）
 
 Api 资源，用户，客户端
 
@@ -26,7 +26,7 @@ Api 资源，用户，客户端
   - ClientPostLogoutRedirectUris
   - ClientSecrets
 
-## 三 应用用户
+## （三） 应用用户
 
 MicrosoftIdentity 扩展 自定义上下文
 
