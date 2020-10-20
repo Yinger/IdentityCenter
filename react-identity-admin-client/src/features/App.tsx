@@ -61,17 +61,14 @@ const App = ({ match }: any) => {
           </Menu>
         </Sider>
         <Layout className="site-layout" style={{ marginLeft: 200 }}>
-          <Header
+          {/* <Header
             className="site-header-layout-background"
             style={{ padding: 5 }}
           >
             <h2> Header </h2>
-          </Header>
+          </Header> */}
           <Content style={{ marginTop: 3, overflow: "initial" }}>
-            <div
-              className="site-layout-background"
-              style={{ padding: 24, textAlign: "center" }}
-            >
+            <div className="site-layout-background" style={{ padding: 24 }}>
               <Route path="/" exact component={User} />
               <Route path="/apiResource" component={ApiResource} />
               <Route path="/client" component={Client} />
