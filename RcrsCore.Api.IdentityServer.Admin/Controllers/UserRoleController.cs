@@ -58,7 +58,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = roleList.Select(x => x.RoleName).ToList()
+                Data = roleList.Select(x => x.RoleName).ToList()
             };
         }
 
@@ -79,7 +79,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = roleList.Select(x => x.RoleName).ToList()
+                Data = roleList.Select(x => x.RoleName).ToList()
             };
         }
 
@@ -96,7 +96,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
         public MessageModel<List<string>> AddRoleToUser(string userId, string roleName)
         {
             MessageModel<List<string>> messageModel = new MessageModel<List<string>>();
-            messageModel.Response = new List<string>();
+            messageModel.Data = new List<string>();
 
             if (string.IsNullOrEmpty(userId))
             {
@@ -120,7 +120,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                 {
                     messageModel.Msg = "ロール名既存しました。";
                     messageModel.Success = false;
-                    messageModel.Response = roleNameList;
+                    messageModel.Data = roleNameList;
                 }
                 else
                 {
@@ -134,7 +134,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                     {
                         messageModel.Msg = "システムに該当ロールがありません。";
                         messageModel.Success = false;
-                        messageModel.Response = roleNameList;
+                        messageModel.Data = roleNameList;
                     }
                     else
                     {
@@ -143,7 +143,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                         {
                             messageModel.Msg = "OK";
                             messageModel.Success = true;
-                            messageModel.Response = _bizRole.GetRoleListByUserId(userId).Select(x => x.RoleName).ToList();
+                            messageModel.Data = _bizRole.GetRoleListByUserId(userId).Select(x => x.RoleName).ToList();
                         }
                         else
                         {
@@ -170,7 +170,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
         public MessageModel<List<string>> RemoveRoleFromUser(string userId, string roleName)
         {
             MessageModel<List<string>> messageModel = new MessageModel<List<string>>();
-            messageModel.Response = new List<string>();
+            messageModel.Data = new List<string>();
 
             if (string.IsNullOrEmpty(userId))
             {
@@ -197,7 +197,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                     {
                         messageModel.Msg = "OK";
                         messageModel.Success = true;
-                        messageModel.Response = _bizRole.GetRoleListByUserId(userId).Select(x => x.RoleName).ToList();
+                        messageModel.Data = _bizRole.GetRoleListByUserId(userId).Select(x => x.RoleName).ToList();
                     }
                     else
                     {
@@ -209,7 +209,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                 {
                     messageModel.Msg = "ロールはユーザーに持っていません。";
                     messageModel.Success = false;
-                    messageModel.Response = roleNameList;
+                    messageModel.Data = roleNameList;
                 }
             }
 

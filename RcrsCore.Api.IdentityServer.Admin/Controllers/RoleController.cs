@@ -57,7 +57,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = roleList
+                Data = roleList
             };
         }
 
@@ -110,7 +110,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = role
+                Data = role
             };
         }
 
@@ -142,7 +142,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = role
+                Data = role
             };
         }
 
@@ -163,7 +163,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = roleList
+                Data = roleList
             };
         }
 
@@ -204,7 +204,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                 returnModel.Msg = "新規成功";
             }
 
-            returnModel.Response = viewRole;
+            returnModel.Data = viewRole;
 
             return returnModel;
         }
@@ -223,7 +223,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             ApplicationRole appRole = null;
             var returnModel = new MessageModel<RoleViewModel>();
             string roleOldName = string.Empty;
-            returnModel.Response = viewRole;
+            returnModel.Data = viewRole;
 
             //必須入力チェック
             if (viewRole != null && !string.IsNullOrEmpty(viewRole.RoleName))
@@ -265,7 +265,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                             _bizUserClaim.UpdateRoleName(roleOldName, viewRole.RoleName);
 
                         returnModel.Msg = "保存成功";
-                        returnModel.Response = viewRole;
+                        returnModel.Data = viewRole;
                     }
                 }
                 else
@@ -298,9 +298,9 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             ApplicationRole role = _bizRole.FindByIdAsync(id);
 
             //ロールを削除します。
-            returnModel.Response = _bizRole.RemoveRole(role);
+            returnModel.Data = _bizRole.RemoveRole(role);
             //ユーザーのクレームを更新します。
-            if (returnModel.Response)
+            if (returnModel.Data)
             {
                 _bizUserClaim.RemoveRoleName(role.Name);
                 returnModel.Success = true;
@@ -330,9 +330,9 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             ApplicationRole role = _bizRole.FindByName(name);
 
             //ロールを削除します。
-            returnModel.Response = _bizRole.RemoveRole(role);
+            returnModel.Data = _bizRole.RemoveRole(role);
             //ユーザーのクレームを更新します。
-            if (returnModel.Response)
+            if (returnModel.Data)
             {
                 _bizUserClaim.RemoveRoleName(role.Name);
                 returnModel.Success = true;

@@ -22,6 +22,6 @@ namespace RcrsCore.IdentityServer.Dto
         public string Msg { get; set; } = "サーバーエラー";
 
         /// <summary>戻るのデータ</summary>
-        public T Response { get; set; }
+        public T Data { get; set; }
     }
 }

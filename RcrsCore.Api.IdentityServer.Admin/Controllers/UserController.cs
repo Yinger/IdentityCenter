@@ -51,7 +51,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = userList
+                Data = userList
             };
         }
 
@@ -70,7 +70,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = _bizUser.FindById(id)
+                Data = _bizUser.FindById(id)
             };
         }
 
@@ -89,7 +89,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = _bizUser.FindByName(name)
+                Data = _bizUser.FindByName(name)
             };
         }
 
@@ -114,7 +114,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = userList
+                Data = userList
             };
         }
 
@@ -135,7 +135,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = userList
+                Data = userList
             };
         }
 
@@ -151,7 +151,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
         public MessageModel<UserViewModel> Create([FromBody] UserViewModel viewUser)
         {
             var returnModel = new MessageModel<UserViewModel>();
-            returnModel.Response = viewUser;
+            returnModel.Data = viewUser;
 
             if (string.IsNullOrEmpty(viewUser.LoginName) || string.IsNullOrEmpty(viewUser.LoginName.Trim()))
             {
@@ -176,7 +176,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                 {
                     returnModel.Success = true;
                     returnModel.Msg = "OK";
-                    returnModel.Response = newUser;
+                    returnModel.Data = newUser;
                 }
             }
 
@@ -196,7 +196,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
         public MessageModel<UserViewModel> Edit([FromBody] UserViewModel viewModel)
         {
             MessageModel<UserViewModel> messageModel = new MessageModel<UserViewModel>();
-            messageModel.Response = viewModel;
+            messageModel.Data = viewModel;
             messageModel.Msg = "OK";
 
             if (viewModel != null)
@@ -228,15 +228,15 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                     if (messageModel.Msg.Equals("OK"))
                     {
                         messageModel.Success = true;
-                        messageModel.Response = _bizUser.EditUser(viewModel);
+                        messageModel.Data = _bizUser.EditUser(viewModel);
                     }
 
                     //保存失敗の場合こちら
-                    if (messageModel.Response == null)
+                    if (messageModel.Data == null)
                     {
                         messageModel.Success = false;
                         messageModel.Msg = "保存失敗";
-                        messageModel.Response = viewModel;
+                        messageModel.Data = viewModel;
                     }
                 }
             }
@@ -262,9 +262,9 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
         {
             var returnModel = new MessageModel<bool>();
 
-            returnModel.Response = _bizUser.RemoveUser(id);
+            returnModel.Data = _bizUser.RemoveUser(id);
 
-            if (returnModel.Response)
+            if (returnModel.Data)
             {
                 returnModel.Success = true;
                 returnModel.Msg = "OK";

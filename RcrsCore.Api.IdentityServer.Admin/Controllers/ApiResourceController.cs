@@ -55,7 +55,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = apiList
+                Data = apiList
             };
         }
 
@@ -76,7 +76,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = api
+                Data = api
             };
         }
 
@@ -96,7 +96,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = api
+                Data = api
             };
         }
 
@@ -117,7 +117,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = apiList
+                Data = apiList
             };
         }
 
@@ -184,7 +184,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                 messageModel.Success = false;
             }
 
-            messageModel.Response = apiViewModel;
+            messageModel.Data = apiViewModel;
 
             return messageModel;
         }
@@ -205,7 +205,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             ApiViewModel api = _bizApi.FindById(viewApi.Id);
 
             messageModel.Msg = string.Empty;
-            messageModel.Response = viewApi;
+            messageModel.Data = viewApi;
 
             if (api != null)
             {
@@ -234,7 +234,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                 {
                     api.Name = viewApi.Name;
                     api.Description = viewApi.Description;
-                    messageModel.Response = _bizApi.SaveEdit(api);
+                    messageModel.Data = _bizApi.SaveEdit(api);
                     messageModel.Success = true;
                     messageModel.Msg = "OK";
 
@@ -264,9 +264,9 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             var returnModel = new MessageModel<bool>();
             ApiViewModel viewModel = _bizApi.FindById(id);
 
-            returnModel.Response = _bizApi.RemoveApi(id);
+            returnModel.Data = _bizApi.RemoveApi(id);
 
-            if (returnModel.Response)
+            if (returnModel.Data)
             {
                 ////クライアントのスコープも削除処理
                 //foreach (string scope in viewModel.ListScope)
@@ -300,7 +300,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = _bizApi.GetApiScopes()
+                Data = _bizApi.GetApiScopes()
             };
         }
 
@@ -325,7 +325,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = listScope
+                Data = listScope
             };
         }
 
@@ -348,7 +348,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 messageModel.Msg = "API存在していません。";
                 messageModel.Success = false;
-                messageModel.Response = new List<string> { scope };
+                messageModel.Data = new List<string> { scope };
             }
             else
             {
@@ -358,7 +358,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                 {
                     messageModel.Msg = "スコープ既存しました。";
                     messageModel.Success = false;
-                    messageModel.Response = api.ListScope;
+                    messageModel.Data = api.ListScope;
                 }
             }
 
@@ -384,7 +384,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 messageModel.Msg = "API存在していません。";
                 messageModel.Success = false;
-                messageModel.Response = new List<string> { scope };
+                messageModel.Data = new List<string> { scope };
             }
             else
             {
@@ -398,7 +398,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                 {
                     messageModel.Msg = "スコープ存在しません。";
                     messageModel.Success = false;
-                    messageModel.Response = api.ListScope;
+                    messageModel.Data = api.ListScope;
                 }
             }
 
@@ -421,7 +421,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
 
             messageModel.Msg = "OK";
             messageModel.Success = true;
-            messageModel.Response = IdentityConst.CustomJwtClaimTypes.DefaultClaimTypes;
+            messageModel.Data = IdentityConst.CustomJwtClaimTypes.DefaultClaimTypes;
 
             return messageModel;
         }
@@ -444,13 +444,13 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 messageModel.Msg = "API存在していません。";
                 messageModel.Success = false;
-                messageModel.Response = new List<string> { };
+                messageModel.Data = new List<string> { };
             }
             else
             {
                 messageModel.Msg = "OK";
                 messageModel.Success = true;
-                messageModel.Response = _bizApi.GetApiClaimsForAdd(apiId);
+                messageModel.Data = _bizApi.GetApiClaimsForAdd(apiId);
             }
 
             return messageModel;
@@ -477,7 +477,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = listClaim
+                Data = listClaim
             };
         }
 
@@ -500,7 +500,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 messageModel.Msg = "API存在していません。";
                 messageModel.Success = false;
-                messageModel.Response = new List<string> { claim };
+                messageModel.Data = new List<string> { claim };
             }
             else
             {
@@ -512,14 +512,14 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                     {
                         messageModel.Msg = "クレーム既存しました。";
                         messageModel.Success = false;
-                        messageModel.Response = api.ListScope;
+                        messageModel.Data = api.ListScope;
                     }
                 }
                 else
                 {
                     messageModel.Msg = "このクレームはシステムに存在していません。";
                     messageModel.Success = false;
-                    messageModel.Response = new List<string> { claim };
+                    messageModel.Data = new List<string> { claim };
                 }
             }
 
@@ -545,7 +545,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 messageModel.Msg = "API存在していません。";
                 messageModel.Success = false;
-                messageModel.Response = new List<string> { claim };
+                messageModel.Data = new List<string> { claim };
             }
             else
             {
@@ -555,7 +555,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                 {
                     messageModel.Msg = "クレーム存在しません。";
                     messageModel.Success = false;
-                    messageModel.Response = new List<string> { claim };
+                    messageModel.Data = new List<string> { claim };
                 }
             }
 

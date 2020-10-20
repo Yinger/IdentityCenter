@@ -51,7 +51,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = clientList
+                Data = clientList
             };
         }
 
@@ -72,7 +72,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = client
+                Data = client
             };
         }
 
@@ -92,7 +92,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = client
+                Data = client
             };
         }
 
@@ -113,7 +113,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = clientList
+                Data = clientList
             };
         }
 
@@ -161,7 +161,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             ClientViewModel client = _bizClient.FindByID(viewClient.ID);
 
             messageModel.Msg = string.Empty;
-            messageModel.Response = viewClient;
+            messageModel.Data = viewClient;
 
             if (client != null)
             {
@@ -188,7 +188,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
 
                 if (string.IsNullOrEmpty(messageModel.Msg))
                 {
-                    messageModel.Response = _bizClient.SaveEdit(viewClient);
+                    messageModel.Data = _bizClient.SaveEdit(viewClient);
                     messageModel.Success = true;
                     messageModel.Msg = "OK";
                 }
@@ -215,9 +215,9 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
         {
             var returnModel = new MessageModel<bool>();
 
-            returnModel.Response = _bizClient.RemoveClient(id);
+            returnModel.Data = _bizClient.RemoveClient(id);
 
-            if (returnModel.Response)
+            if (returnModel.Data)
             {
                 returnModel.Success = true;
                 returnModel.Msg = "OK";
@@ -246,7 +246,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = _bizClient.GetAllScopes()
+                Data = _bizClient.GetAllScopes()
             };
         }
 
@@ -265,7 +265,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = _bizClient.GetClientScopes(clientId)
+                Data = _bizClient.GetClientScopes(clientId)
             };
         }
 
@@ -286,7 +286,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 Msg = "OK",
                 Success = true,
-                Response = scopeList
+                Data = scopeList
             };
         }
 
@@ -309,7 +309,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 messageModel.Msg = "クライアント存在していません。";
                 messageModel.Success = false;
-                messageModel.Response = new List<string> { scope };
+                messageModel.Data = new List<string> { scope };
             }
             else
             {
@@ -317,7 +317,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                 {
                     messageModel.Msg = "スコープ既存しました。";
                     messageModel.Success = false;
-                    messageModel.Response = client.ListScope;
+                    messageModel.Data = client.ListScope;
                 }
                 else
                 {
@@ -325,7 +325,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
 
                     messageModel.Msg = "OK";
                     messageModel.Success = true;
-                    messageModel.Response = _bizClient.GetClientScopes(clientId);
+                    messageModel.Data = _bizClient.GetClientScopes(clientId);
                 }
             }
 
@@ -351,7 +351,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             {
                 messageModel.Msg = "クライアント存在していません。";
                 messageModel.Success = false;
-                messageModel.Response = new List<string> { scope };
+                messageModel.Data = new List<string> { scope };
             }
             else
             {
@@ -361,13 +361,13 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
 
                     messageModel.Msg = "OK";
                     messageModel.Success = true;
-                    messageModel.Response = _bizClient.GetClientScopes(clientId);
+                    messageModel.Data = _bizClient.GetClientScopes(clientId);
                 }
                 else
                 {
                     messageModel.Msg = "スコープ存在しません。";
                     messageModel.Success = false;
-                    messageModel.Response = client.ListScope;
+                    messageModel.Data = client.ListScope;
                 }
             }
 
@@ -385,7 +385,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
         private MessageModel<ClientViewModel> create(ClientViewModel viewModel, string type)
         {
             MessageModel<ClientViewModel> resultMsg = new MessageModel<ClientViewModel>();
-            resultMsg.Response = viewModel;
+            resultMsg.Data = viewModel;
 
             if (Regex.IsMatch(viewModel.Name, "^[a-zA-Z0-9.]*$"))
             {
@@ -399,7 +399,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                     {
                         resultMsg.Msg = "新規成功";
                         resultMsg.Success = true;
-                        resultMsg.Response = _bizClient.FindByName(viewModel.Name);
+                        resultMsg.Data = _bizClient.FindByName(viewModel.Name);
                     }
                     else
                     {
