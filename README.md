@@ -15,7 +15,7 @@ Api 资源，用户，客户端
   - IdentityResources
   - IdentityClaims
 - API \*\*\*
-  - ApiClaims （1ApiResource ： \*ApiClaims ➡️ access token）
+  - ApiClaims （1 个 ApiResource 对应多个 ApiClaims ➡️ access token）
   - ApiResources （ApiResource ➡️ Client AllowedScopes ➡️ Token Claims）
 - Client \*\*\*
   - Clients
