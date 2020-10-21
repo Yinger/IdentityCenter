@@ -5,10 +5,14 @@ export interface RoleInfo {
   description: string;
 }
 
-export interface RoleSearchRequest {
+export interface RoleRequest {
   roleName?: string;
   tag?: string;
   description?: string;
 }
 
-export type RoleSearchResponse = RoleInfo[] | undefined;
+export type RoleResponse = RoleInfo[] | undefined;
+
+export type State = Readonly<{
+  roleList: RoleResponse;
+}>;

@@ -17,7 +17,7 @@ import ApiResource from "./apiResource";
 import Role from "./role";
 import User from "./user";
 
-const { Header, Content, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 const App = ({ match }: any) => {
   let defaultKey = match.url.replace("/", "") || "user";
@@ -61,12 +61,6 @@ const App = ({ match }: any) => {
           </Menu>
         </Sider>
         <Layout className="site-layout" style={{ marginLeft: 200 }}>
-          {/* <Header
-            className="site-header-layout-background"
-            style={{ padding: 5 }}
-          >
-            <h2> Header </h2>
-          </Header> */}
           <Content style={{ marginTop: 3, overflow: "initial" }}>
             <div className="site-layout-background" style={{ padding: 24 }}>
               <Route path="/" exact component={User} />

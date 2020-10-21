@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form, Input } from "antd";
 import { FormProps } from "antd/lib/form";
-import { RoleSearchRequest, RoleSearchResponse } from "../../../interface/role";
+import { RoleRequest, RoleResponse } from "../../../interface/role";
 
 interface Props extends FormProps {
   //   onDataChange(data: RoleSearchResponse): void;
-  //   getData(param: RoleSearchRequest, callback: () => void): void;
-  //   setLoading(loading: boolean): void;
+  getData(param: RoleRequest, callback: () => void): void;
+  setLoading(loading: boolean): void;
 }
 
 const QueryForm = (props: Props) => {
@@ -26,18 +26,19 @@ const QueryForm = (props: Props) => {
     setDescription(e.currentTarget.value);
   };
 
-  const queryRole = (param: RoleSearchRequest) => {
-    // props.setLoading(true);
-    // props.getData(param, () => {
-    //   props.setLoading(false);
-    // });
+  const queryRole = (param: RoleRequest) => {
+    props.setLoading(true);
+    // console.log(param);
+    props.getData(param, () => {
+      props.setLoading(false);
+    });
   };
 
   const handleReset = () => {
     setRoleName("");
     setTag("");
     setDescription("");
-    queryRole({ roleName: "", tag: "", description: "" } as RoleSearchRequest);
+    queryRole({ roleName: "", tag: "", description: "" } as RoleRequest);
   };
 
   const handleSubmit = () => {
