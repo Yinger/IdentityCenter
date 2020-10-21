@@ -45,6 +45,14 @@ namespace RcrsCore.Api.IdentityServer.Admin
         //---------------------------------------------------------------
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => {
+                options.AddPolicy("mypolicy", builder => builder
+                 .WithOrigins("http://localhost:3000/")
+                 .SetIsOriginAllowed((host) => true)
+                 .AllowAnyMethod()
+                 .AllowAnyHeader());
+            });
+
             services.AddControllers();
 
             //AppSettingsHelper
@@ -92,6 +100,8 @@ namespace RcrsCore.Api.IdentityServer.Admin
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseCors("mypolicy");
 
             app.UseAuthorization();
 
