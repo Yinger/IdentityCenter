@@ -8,7 +8,7 @@ import { post } from "../../../../utils/request";
 export function getRoleList(param: RoleRequest, callback: () => void) {
   return (dispatch: Dispatch) => {
     post(SEARCH_ROLE_URL, param).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       dispatch({
         type: ROLE_SEARCH,
         payload: res.data,

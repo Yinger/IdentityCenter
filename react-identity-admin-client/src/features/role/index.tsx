@@ -5,25 +5,76 @@ import QueryForm from "./components/queryForm";
 import { Button, Table } from "antd";
 import DataColumns from "./components/dataColumns";
 import "./index.scss";
-import { RoleRequest, RoleResponse } from "../../interface/role";
-import { getRoleList } from "./redux/actions";
+import {
+  RoleCreateRequest,
+  RoleDeleteRequest,
+  RoleInfo,
+  RoleRequest,
+  RoleResponse,
+  RoleUpdateRequest,
+} from "../../interface/role";
+import {
+  getRoleList,
+  createRole,
+  updateRole,
+  deleteRole,
+} from "./redux/actions";
+import { PlusOutlined } from "@ant-design/icons";
+import InfoModal from "./components/infoModal";
 
 interface Props {
   onSearchRole(param: RoleRequest, callback: () => void): void;
+  onUpdateRole(param: RoleUpdateRequest, callback: () => void): void;
+  onCreateRole(param: RoleCreateRequest, callback: () => void): void;
+  onDeleteRole(param: RoleDeleteRequest): void;
   roleList: RoleResponse;
 }
 
 const Role = (props: Props) => {
   const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [edit, setEdit] = useState(false);
+  const [rowData, setRowData] = useState<Partial<RoleInfo>>({});
+
+  const hideModal = () => {
+    setRowData({});
+    setShowModal(false);
+  };
+
+  const handleCreate = () => {
+    setRowData({});
+    setShowModal(true);
+    setEdit(false);
+  };
+
+  const handleUpdate = (record: RoleInfo) => {
+    setShowModal(true);
+    setEdit(true);
+    setRowData(record);
+  };
+
+  const handleDelete = (param: RoleDeleteRequest) => {
+    props.onDeleteRole(param);
+  };
+
   return (
     <>
       <QueryForm getData={props.onSearchRole} setLoading={setLoading} />
       <div className="toolbar">
-        <Button type="primary">新規</Button>
+        <Button type="primary" icon={<PlusOutlined />} onClick={handleCreate}>
+          新規
+        </Button>
       </div>
-
+      <InfoModal
+        visible={showModal}
+        edit={edit}
+        rowData={rowData}
+        hide={hideModal}
+        createData={props.onCreateRole}
+        updateData={props.onUpdateRole}
+      />
       <Table
-        columns={DataColumns()}
+        columns={DataColumns(handleUpdate, handleDelete)}
         dataSource={props.roleList}
         loading={loading}
         className="table"
@@ -40,8 +91,11 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       onSearchRole: getRoleList,
+      onCreateRole: createRole,
+      onUpdateRole: updateRole,
+      onDeleteRole: deleteRole,
     },
-    dispatch,
+    dispatch
   );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Role);

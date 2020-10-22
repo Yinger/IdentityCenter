@@ -1,39 +1,49 @@
 import React from "react";
-import { Button, Divider, Popconfirm } from "antd";
-import { RoleInfo } from "../../../interface/role";
+import { Button, Divider, Popconfirm, Tag } from "antd";
+import { RoleDeleteRequest, RoleInfo } from "../../../interface/role";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
-const DataColumns = () => {
+const DataColumns = (
+  handleUpdate: (record: RoleInfo) => void,
+  handleDelete: (record: RoleDeleteRequest) => void
+) => {
   return [
     {
       title: "ID",
       dataIndex: "id",
       key: "id",
+      width: "25%",
     },
     {
       title: "ロール",
       dataIndex: "roleName",
       key: "roleName",
+      width: "30%",
     },
     {
       title: "tag",
       dataIndex: "tag",
       key: "tag",
+      width: "10%",
+      render: (tag: string) => <Tag color="blue">{tag.toUpperCase()}</Tag>,
     },
     {
       title: "説明",
       dataIndex: "description",
       key: "description",
+      width: "20%",
     },
     {
       title: "操作",
       key: "action",
+      width: "15%",
       render: (text: string, record: RoleInfo) => (
         <span>
           <Button
             size="small"
-            // icon="edit"
+            icon={<EditOutlined />}
             onClick={() => {
-              // handleUpdate(record);
+              handleUpdate(record);
             }}
           >
             編集
@@ -42,14 +52,11 @@ const DataColumns = () => {
           <Popconfirm
             title={`${record.roleName} を削除しますか？`}
             onConfirm={() => {
-              // handleDelete({ id: record.id });
+              console.log(record);
+              handleDelete({ id: record.id });
             }}
           >
-            <Button
-              size="small"
-              // icon="delete"
-              danger
-            >
+            <Button size="small" icon={<DeleteOutlined />} danger>
               削除
             </Button>
           </Popconfirm>

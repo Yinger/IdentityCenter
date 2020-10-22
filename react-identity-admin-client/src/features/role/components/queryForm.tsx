@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form, Input } from "antd";
 import { FormProps } from "antd/lib/form";
-import { RoleRequest, RoleResponse } from "../../../interface/role";
+import { RoleRequest } from "../../../interface/role";
+import { SearchOutlined, ClearOutlined } from "@ant-design/icons";
 
 interface Props extends FormProps {
   //   onDataChange(data: RoleSearchResponse): void;
@@ -77,12 +78,14 @@ const QueryForm = (props: Props) => {
         />
       </Form.Item>
       <Form.Item>
-        <Button type="primary" onClick={handleSubmit}>
+        <Button type="primary" onClick={handleSubmit} icon={<SearchOutlined />}>
           検索
         </Button>
       </Form.Item>
       <Form.Item>
-        <Button onClick={handleReset}>クリア</Button>
+        <Button onClick={handleReset} icon={<ClearOutlined />}>
+          クリア
+        </Button>
       </Form.Item>
     </Form>
   );

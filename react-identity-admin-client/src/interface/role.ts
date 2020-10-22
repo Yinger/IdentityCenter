@@ -11,6 +11,24 @@ export interface RoleRequest {
   description?: string;
 }
 
+export interface RoleUpdateRequest {
+  id: string;
+  roleName: string;
+  tag: string;
+  description: string;
+}
+
+export interface RoleCreateRequest {
+  id: string;
+  roleName: string;
+  tag: string;
+  description: string;
+}
+
+export interface RoleDeleteRequest {
+  id: string;
+}
+
 export type RoleResponse = RoleInfo[] | undefined;
 
 export type State = Readonly<{

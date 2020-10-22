@@ -16,7 +16,7 @@ axios.interceptors.response.use(
   },
   function (error) {
     return Promise.reject(error);
-  },
+  }
 );
 
 export function get(url: string, data: any) {
@@ -32,6 +32,21 @@ export function post(url: string, data: any) {
     method: "post",
     url,
     data,
+  });
+}
+
+export function put(url: string, data: any) {
+  return axios({
+    method: "put",
+    url,
+    data,
+  });
+}
+
+export function remove(url: string) {
+  return axios({
+    method: "delete",
+    url,
   });
 }
 
