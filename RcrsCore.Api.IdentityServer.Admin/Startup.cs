@@ -45,19 +45,21 @@ namespace RcrsCore.Api.IdentityServer.Admin
         //---------------------------------------------------------------
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options => {
+            //AppSettingsHelper
+            var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
+            services.AddSingleton(new AppSettingsHelper(basePath));
+
+            //add cors
+            services.AddCors(options =>
+            {
                 options.AddPolicy("mypolicy", builder => builder
-                 .WithOrigins("http://localhost:3000/")
+                 .WithOrigins(AppSettingsHelper.App(new string[] { "AllowedCors", "ReactClient" }))
                  .SetIsOriginAllowed((host) => true)
                  .AllowAnyMethod()
                  .AllowAnyHeader());
             });
 
             services.AddControllers();
-
-            //AppSettingsHelper
-            var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
-            services.AddSingleton(new AppSettingsHelper(basePath));
 
             //DB
             string connectionString = AppSettingsHelper.App(new string[] { "ConnectionStrings", "DefaultConnection" });
