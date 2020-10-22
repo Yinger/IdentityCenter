@@ -127,8 +127,18 @@ namespace RcrsCore.Api.IdentityServer.Admin.Biz
         //---------------------------------------------------------------
         public ApplicationRole FindByIdAsync(string id)
         {
-            id = id.ToUpper();
-            return _roleManager.FindByIdAsync(id).Result;
+            bool isValid = false;
+            if (id != null)
+            {
+                id = id.ToUpper();
+                Guid guidResult;
+                isValid = Guid.TryParse(id, out guidResult);
+            }
+
+            if (isValid)
+                return _roleManager.FindByIdAsync(id).Result;
+            else
+                return null;
         }
 
         //---------------------------------------------------------------

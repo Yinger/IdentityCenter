@@ -224,6 +224,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             var returnModel = new MessageModel<RoleViewModel>();
             string roleOldName = string.Empty;
             returnModel.Data = viewRole;
+            returnModel.Msg = string.Empty;
 
             //必須入力チェック
             if (viewRole != null && !string.IsNullOrEmpty(viewRole.RoleName))
