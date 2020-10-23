@@ -61,11 +61,9 @@ const Role = (props: Props) => {
     <div>
       <PageHeader
         className="site-page-header"
-        // onBack={() => null}
         title="ロール"
         subTitle="ロールを管理します"
       />
-      {/* <h2 style={{ textAlign: "center" }}>ロール管理</h2> */}
       <QueryForm getData={props.onSearchRole} setLoading={setLoading} />
       <Button
         type="primary"
