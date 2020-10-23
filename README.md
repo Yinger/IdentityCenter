@@ -36,3 +36,7 @@ MicrosoftIdentity 扩展 自定义上下文
   - Role
 - 声明
   - AspNetUserClaims（➡️ Token）
+
+# Pages
+
+![role](role.png)

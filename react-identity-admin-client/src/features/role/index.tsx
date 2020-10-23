@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { bindActionCreators, Dispatch } from "redux";
 import { connect } from "react-redux";
 import QueryForm from "./components/queryForm";
-import { Button, Table } from "antd";
+import { Button, Table, PageHeader } from "antd";
 import DataColumns from "./components/dataColumns";
 import "./index.scss";
 import {
@@ -58,10 +58,15 @@ const Role = (props: Props) => {
   };
 
   return (
-    <>
-      <div className="toolbar">
-        <QueryForm getData={props.onSearchRole} setLoading={setLoading} />
-      </div>
+    <div>
+      <PageHeader
+        className="site-page-header"
+        // onBack={() => null}
+        title="ロール"
+        subTitle="ロールを管理します"
+      />
+      {/* <h2 style={{ textAlign: "center" }}>ロール管理</h2> */}
+      <QueryForm getData={props.onSearchRole} setLoading={setLoading} />
       <Button
         type="primary"
         icon={<PlusOutlined />}
@@ -86,7 +91,7 @@ const Role = (props: Props) => {
         size="middle"
         scroll={{ x: "fit-content" }}
       />
-    </>
+    </div>
   );
 };
 

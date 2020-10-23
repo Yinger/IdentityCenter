@@ -24,9 +24,7 @@ const DataColumns = (
       title: "tag",
       dataIndex: "tag",
       key: "tag",
-      render: (tag: string) => (
-        <Tag color="blue">{tag !== null ? tag.toUpperCase() : ""}</Tag>
-      ),
+      render: (tag: string) => <Tag color="blue">{tag}</Tag>,
     },
     {
       title: "説明",

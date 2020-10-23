@@ -62,7 +62,7 @@ const App = ({ match }: any) => {
         </Sider>
         <Layout className="site-layout" style={{ marginLeft: 200 }}>
           <Content style={{ marginTop: 3, overflow: "initial" }}>
-            <div className="site-layout-background" style={{ padding: 24 }}>
+            <div className="site-layout-background" style={{ padding: 12 }}>
               <Route path="/" exact component={User} />
               <Route path="/apiResource" component={ApiResource} />
               <Route path="/client" component={Client} />
