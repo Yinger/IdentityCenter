@@ -13,6 +13,7 @@ const DataColumns = (
       dataIndex: "id",
       key: "id",
       // width: "30%",
+      // align: "center" as "center",
     },
     {
       title: "ロール",
