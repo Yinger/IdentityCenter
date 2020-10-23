@@ -2,13 +2,12 @@ import { Dispatch } from "redux";
 import { Action } from "../../../../interface/types";
 import { ROLE_SEARCH } from "../../../../constants/actions";
 import { RoleRequest, State } from "../../../../interface/role";
-import { SEARCH_ROLE_URL } from "../../../../constants/urls";
+import { ROLE_SEARCH_URL } from "../../../../constants/urls";
 import { post } from "../../../../utils/request";
 
 export function getRoleList(param: RoleRequest, callback: () => void) {
   return (dispatch: Dispatch) => {
-    post(SEARCH_ROLE_URL, param).then((res) => {
-      // console.log(res.data);
+    post(ROLE_SEARCH_URL, param).then((res) => {
       dispatch({
         type: ROLE_SEARCH,
         payload: res.data,

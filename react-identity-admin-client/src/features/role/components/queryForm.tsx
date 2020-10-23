@@ -5,7 +5,6 @@ import { RoleRequest } from "../../../interface/role";
 import { SearchOutlined, ClearOutlined } from "@ant-design/icons";
 
 interface Props extends FormProps {
-  //   onDataChange(data: RoleSearchResponse): void;
   getData(param: RoleRequest, callback: () => void): void;
   setLoading(loading: boolean): void;
 }
@@ -29,7 +28,6 @@ const QueryForm = (props: Props) => {
 
   const queryRole = (param: RoleRequest) => {
     props.setLoading(true);
-    // console.log(param);
     props.getData(param, () => {
       props.setLoading(false);
     });

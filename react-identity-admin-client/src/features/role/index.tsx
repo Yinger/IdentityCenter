@@ -59,12 +59,17 @@ const Role = (props: Props) => {
 
   return (
     <>
-      <QueryForm getData={props.onSearchRole} setLoading={setLoading} />
       <div className="toolbar">
-        <Button type="primary" icon={<PlusOutlined />} onClick={handleCreate}>
-          新規
-        </Button>
+        <QueryForm getData={props.onSearchRole} setLoading={setLoading} />
       </div>
+      <Button
+        type="primary"
+        icon={<PlusOutlined />}
+        onClick={handleCreate}
+        style={{ float: "right", marginTop: -10 }}
+      >
+        新規
+      </Button>
       <InfoModal
         visible={showModal}
         edit={edit}
@@ -78,6 +83,8 @@ const Role = (props: Props) => {
         dataSource={props.roleList}
         loading={loading}
         className="table"
+        size="middle"
+        scroll={{ x: "fit-content" }}
       />
     </>
   );
@@ -95,7 +102,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       onUpdateRole: updateRole,
       onDeleteRole: deleteRole,
     },
-    dispatch
+    dispatch,
   );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Role);

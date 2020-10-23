@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Modal, Form, Input } from "antd";
+import { Modal, Form, Input, message } from "antd";
 import { FormProps } from "antd/lib/form";
+import { ROLE_FIND_BY_NAME_URL } from "../../../constants/urls";
+import { get } from "../../../utils/request";
 import {
   RoleCreateRequest,
   RoleInfo,
@@ -29,20 +31,70 @@ const InfoModal = (props: Props) => {
   const [form] = Form.useForm();
   const [confirmLoading, setConfirmLoading] = useState(false);
 
+  /**
+   * 新規作成または編集保存時に発生します
+   */
   const handleOk = () => {
+    //必須入力項目チェック
     form.validateFields().then(() => {
-      setConfirmLoading(true);
       let param = form.getFieldsValue();
+      let paramFindRoleByName = { name: param.roleName };
+
+      //id非表示ので、ここで記入します
       param.id = props.rowData.id;
-      if (!props.edit) props.createData(param as RoleCreateRequest, close);
-      else props.updateData(param as RoleUpdateRequest, close);
+
+      //loading開始
+      setConfirmLoading(true);
+
+      //新規作成の場合 ---------------------------
+      if (!props.edit) {
+        //同じロール名既存チェック
+        get(ROLE_FIND_BY_NAME_URL, paramFindRoleByName).then((res) => {
+          if (res.data == null) {
+            //既存ではないの場合、新規処理行います
+            props.createData(param as RoleCreateRequest, close);
+          } else {
+            //loading終止
+            setConfirmLoading(false);
+            //メーセッじ表示
+            message.info("該当ロール名は既存しました。");
+          }
+        });
+      }
+      //編集保存の場合 ---------------------------
+      else {
+        //ロール名変更の場合、変更後のロール名既存チェック
+        if (props.rowData.roleName !== param.roleName) {
+          //同じロール名既存チェック
+          get(ROLE_FIND_BY_NAME_URL, paramFindRoleByName).then((res) => {
+            if (res.data == null) {
+              //既存ではないの場合、保存処理行います
+              props.updateData(param as RoleUpdateRequest, close);
+            } else {
+              //loading終止
+              setConfirmLoading(false);
+              //メーセッじ表示
+              message.info("該当ロール名は既存しました。");
+            }
+          });
+        } else {
+          //ロール名変更がない場合、直接保存します
+          props.updateData(param as RoleUpdateRequest, close);
+        }
+      }
     });
   };
 
+  /**
+   * 「キャンセル」ボタンをクリック時に発生します
+   */
   const handleCancel = () => {
     close();
   };
 
+  /**
+   * Dialogクローズ時に発生します
+   */
   const close = () => {
     props.hide();
     setConfirmLoading(false);
