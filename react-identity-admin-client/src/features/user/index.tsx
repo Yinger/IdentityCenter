@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { bindActionCreators, Dispatch } from "redux";
 import { connect } from "react-redux";
 import { UserResponse, UserSearchRequest } from "../../interface/user";
-import { Table } from "antd";
-import DataColumns from "./components/dataColumns";
+import { PageHeader, Table } from "antd";
 import { getUserList } from "./redux/actions";
+import DataColumns from "./components/dataColumns";
+import QueryForm from "./components/queryForm";
 
 interface Props {
   onSearchUser(param: UserSearchRequest, callback: () => void): void;
@@ -13,17 +14,23 @@ interface Props {
 const User = (props: Props) => {
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    let param: UserSearchRequest = {};
-    setLoading(true);
-    props.onSearchUser(param, () => {
-      setLoading(false);
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   let param: UserSearchRequest = {};
+  //   setLoading(true);
+  //   props.onSearchUser(param, () => {
+  //     setLoading(false);
+  //   });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <>
+      <PageHeader
+        className="site-page-header"
+        title="ユーザー"
+        subTitle="ユーザー情報を管理します"
+      />
+      <QueryForm getData={props.onSearchUser} setLoading={setLoading} />
       <Table
         columns={DataColumns()}
         dataSource={props.userList}
