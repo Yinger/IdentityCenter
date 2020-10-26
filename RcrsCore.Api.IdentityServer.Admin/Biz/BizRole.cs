@@ -48,7 +48,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Biz
             IQueryable<RoleViewModel> roleQuery = (from role in _roleContext.Roles
                                                    select new RoleViewModel
                                                    {
-                                                       Id = role.Id.ToString(),
+                                                       Id = role.Id.ToString().ToUpper(),
                                                        RoleName = role.Name,
                                                        Tag = role.TagCD,
                                                        Description = role.Description,

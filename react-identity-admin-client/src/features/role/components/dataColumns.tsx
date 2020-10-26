@@ -5,7 +5,7 @@ import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
 const DataColumns = (
   handleUpdate: (record: RoleInfo) => void,
-  handleDelete: (record: RoleDeleteRequest) => void,
+  handleDelete: (record: RoleDeleteRequest) => void
 ) => {
   return [
     {
@@ -14,6 +14,8 @@ const DataColumns = (
       key: "id",
       // width: "30%",
       // align: "center" as "center",
+      width: 300,
+      ellipsis: true,
     },
     {
       title: "ロール",

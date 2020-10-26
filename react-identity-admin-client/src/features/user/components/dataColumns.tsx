@@ -7,11 +7,13 @@ const DataColumns = (handleUpdate: (record: UserInfo) => void) =>
   //   handleDelete: (record: UserDeleteRequest) => void,
   {
     return [
-      //   {
-      //     title: "ID",
-      //     dataIndex: "id",
-      //     key: "id",
-      //   },
+      {
+        title: "ID",
+        dataIndex: "id",
+        key: "id",
+        width: 100,
+        ellipsis: true,
+      },
       {
         title: "ユーザー名",
         dataIndex: "loginName",
@@ -45,19 +47,19 @@ const DataColumns = (handleUpdate: (record: UserInfo) => void) =>
               ))
             : "",
       },
-      {
-        title: "Claims",
-        dataIndex: "listClaim",
-        key: "listClaim",
-        render: (claimList: string[] | undefined | null) =>
-          claimList !== undefined && claimList != null
-            ? claimList.map((tag: string) => (
-                <Tag color="purple" key={tag}>
-                  {tag}
-                </Tag>
-              ))
-            : "",
-      },
+      // {
+      //   title: "Claims",
+      //   dataIndex: "listClaim",
+      //   key: "listClaim",
+      //   render: (claimList: string[] | undefined | null) =>
+      //     claimList !== undefined && claimList != null
+      //       ? claimList.map((tag: string) => (
+      //           <Tag color="purple" key={tag}>
+      //             {tag}
+      //           </Tag>
+      //         ))
+      //       : "",
+      // },
       {
         // title: "操作",
         key: "action",
