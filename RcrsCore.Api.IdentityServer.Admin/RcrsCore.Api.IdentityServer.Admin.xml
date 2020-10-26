@@ -921,6 +921,12 @@
             <param name="id">ユーザーId</param>
             <returns></returns>
         </member>
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.GetAllClaims">
+            <summary>
+            クレーム全件取得
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:RcrsCore.Api.IdentityServer.Admin.Controllers.UserRoleController">
             <summary>
             ユーザーとロール連動管理コントローラー

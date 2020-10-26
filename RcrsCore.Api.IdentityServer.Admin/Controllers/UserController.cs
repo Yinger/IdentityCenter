@@ -6,6 +6,7 @@ using RcrsCore.IdentityServer.Dto.DomainModel.Application;
 using RcrsCore.IdentityServer.Dto.ViewModel.User;
 using RcrsCore.Api.IdentityServer.Admin.Biz;
 using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application;
+using IdentityModel;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Controllers
 {
@@ -278,6 +279,31 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
             return returnModel;
         }
 
-        //=============================================================================> role
+        //---------------------------------------------------------------
+        /// <summary>
+        /// クレーム全件取得
+        /// </summary>
+        /// <returns></returns>
+        //---------------------------------------------------------------
+        [HttpGet]
+        [Route("GetAllClaims")]
+        public MessageModel<List<string>> GetAllClaims()
+        {
+            var returnModel = new MessageModel<List<string>>();
+
+            List<string> claimList = new List<string>();
+            claimList.Add(JwtClaimTypes.Name);
+            claimList.Add(JwtClaimTypes.Email);
+            claimList.Add(IdentityConst.CustomJwtClaimTypes.LgCode);
+            claimList.Add(IdentityConst.CustomJwtClaimTypes.UserId);
+            claimList.Add(JwtClaimTypes.Role);
+
+            return new MessageModel<List<string>>()
+            {
+                Msg = "OK",
+                Success = true,
+                Data = claimList
+            };
+        }
     }
 }

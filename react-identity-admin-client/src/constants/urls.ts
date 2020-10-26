@@ -8,3 +8,4 @@ export const ROLE_FIND_BY_NAME_URL = RootAPI + "/Role/FindByName";
 
 export const USER_SEARCH_URL = RootAPI + "/User/Search";
 export const USER_GET_ROLENAME_ALL_URL = RootAPI + "/Role/GetAllName";
+export const USER_GET_CLAIMNAME_ALL_URL = RootAPI + "/User/GetAllClaims";

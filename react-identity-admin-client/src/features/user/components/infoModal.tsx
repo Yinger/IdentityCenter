@@ -19,6 +19,7 @@ interface Props extends FormProps {
   edit: boolean;
   rowData: Partial<UserInfo>;
   roleNameList: string[];
+  claimNameList: string[];
   hide(): void;
   // createData(param: UserCreateRequest, callback: () => void): void;
   // updateData(param: UserUpdateRequest, callback: () => void): void;
@@ -59,7 +60,7 @@ const InfoModal = (props: Props) => {
     lgCode,
     lgKaKakari,
     listRole,
-    listClaim,
+    // listClaim,
   } = props.rowData;
 
   return (
@@ -73,6 +74,20 @@ const InfoModal = (props: Props) => {
         confirmLoading={confirmLoading}
       >
         <Form form={form} {...layout} preserve={false}>
+          <Form.Item
+            label="クレーム(固定)"
+            name="listClaim"
+            initialValue={props.claimNameList}
+            key="listClaim"
+          >
+            {props.claimNameList !== undefined && props.claimNameList != null
+              ? props.claimNameList.map((claim: string) => (
+                  <Tag color="purple" key={claim}>
+                    {claim}
+                  </Tag>
+                ))
+              : ""}
+          </Form.Item>
           <Form.Item
             label="ユーザー名"
             name="loginName"
@@ -116,7 +131,12 @@ const InfoModal = (props: Props) => {
               allowClear
             />
           </Form.Item>
-          <Form.Item label="ロール" name="listRole" initialValue={listRole}>
+          <Form.Item
+            label="ロール"
+            name="listRole"
+            initialValue={listRole}
+            key="listRole"
+          >
             <Select
               mode="multiple"
               size="middle"
@@ -133,26 +153,6 @@ const InfoModal = (props: Props) => {
                   ))
                 : ""}
             </Select>
-          </Form.Item>
-          <Form.Item
-            label="クレーム(固定)"
-            name="listRole"
-            initialValue={listClaim}
-          >
-            {listClaim !== undefined && listClaim != null
-              ? listClaim.map((claim: string) => (
-                  <Tag color="purple" key={claim}>
-                    {claim}
-                  </Tag>
-                ))
-              : ""}
-            {/* (listClaim !== undefined && listClaim != null
-                ? listClaim.map((claim: string) => (
-                    <Tag key={claim} value={role}>
-                      {role}
-                    </Tag>
-                  ))
-                : "") */}
           </Form.Item>
         </Form>
       </Modal>

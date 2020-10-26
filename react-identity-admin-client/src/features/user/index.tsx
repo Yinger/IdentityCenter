@@ -7,7 +7,11 @@ import {
   UserSearchRequest,
 } from "../../interface/user";
 import { Button, PageHeader, Table } from "antd";
-import { getUserList, getUserRoleNameList } from "./redux/actions";
+import {
+  getUserClaimNameList,
+  getUserList,
+  getUserRoleNameList,
+} from "./redux/actions";
 import DataColumns from "./components/dataColumns";
 import QueryForm from "./components/queryForm";
 import InfoModal from "./components/infoModal";
@@ -17,8 +21,10 @@ import moment from "moment";
 interface Props {
   onSearchUser(param: UserSearchRequest, callback: () => void): void;
   onInitRoleNameList(param: any, callback: () => void): void;
+  onInitClaimNameList(param: any, callback: () => void): void;
   userList: UserResponse;
   roleNameList: string[];
+  claimNameList: string[];
 }
 const User = (props: Props) => {
   const [loading, setLoading] = useState(false);
@@ -51,6 +57,7 @@ const User = (props: Props) => {
         setLoading(false);
       });
       props.onInitRoleNameList(moment.now().toString(), () => {});
+      props.onInitClaimNameList(null, () => {});
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
@@ -83,6 +90,7 @@ const User = (props: Props) => {
         rowData={rowData}
         hide={hideModal}
         roleNameList={props.roleNameList}
+        claimNameList={props.claimNameList}
         // createData={props.onCreateRole}
         // updateData={props.onUpdateRole}
       />
@@ -102,6 +110,7 @@ const User = (props: Props) => {
 const mapStateToProps = (state: any) => ({
   userList: state.user.userList,
   roleNameList: state.user.roleNameList,
+  claimNameList: state.user.claimNameList,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -109,6 +118,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     {
       onSearchUser: getUserList,
       onInitRoleNameList: getUserRoleNameList,
+      onInitClaimNameList: getUserClaimNameList,
     },
     dispatch
   );
