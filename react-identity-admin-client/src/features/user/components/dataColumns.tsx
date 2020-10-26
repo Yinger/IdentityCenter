@@ -3,8 +3,7 @@ import { Button, Divider, Popconfirm, Tag } from "antd";
 import { UserInfo } from "../../../interface/user";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
-const DataColumns = () =>
-  //   handleUpdate: (record: UserInfo) => void,
+const DataColumns = (handleUpdate: (record: UserInfo) => void) =>
   //   handleDelete: (record: UserDeleteRequest) => void,
   {
     return [
@@ -70,7 +69,7 @@ const DataColumns = () =>
               icon={<EditOutlined />}
               type="primary"
               onClick={() => {
-                // handleUpdate(record);
+                handleUpdate(record);
               }}
             >
               編集

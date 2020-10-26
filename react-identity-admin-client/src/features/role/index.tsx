@@ -88,6 +88,7 @@ const Role = (props: Props) => {
         className="table"
         size="middle"
         scroll={{ x: "fit-content" }}
+        rowKey="id"
       />
     </div>
   );
@@ -105,7 +106,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       onUpdateRole: updateRole,
       onDeleteRole: deleteRole,
     },
-    dispatch,
+    dispatch
   );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Role);

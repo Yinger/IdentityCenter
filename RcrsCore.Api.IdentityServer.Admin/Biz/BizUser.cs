@@ -331,7 +331,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Biz
                 viewUser.LgCode = appUser.LgCode;
                 viewUser.LgKaKakari = appUser.LgKaKakari;
                 viewUser.ListRole = listRole;
-                viewUser.ListClaim = _bizClaim.GetUserClaims(viewUser.Id).Select(s => s.Type).ToList();
+                viewUser.ListClaim = _bizClaim.GetUserClaims(viewUser.Id).Select(s => s.Type).Distinct().ToList(); //roleの場合、重複ので、Distinct処理
             }
 
             return viewUser;

@@ -22,7 +22,7 @@ const { Content, Sider } = Layout;
 const App = ({ match }: any) => {
   let defaultKey = match.url.replace("/", "") || "user";
   return (
-    <ConfigProvider locale={ja_JP}>
+    <ConfigProvider locale={ja_JP} key="ConfigProvider">
       <Layout>
         <Sider
           style={{
@@ -63,11 +63,15 @@ const App = ({ match }: any) => {
         <Layout className="site-layout" style={{ marginLeft: 200 }}>
           <Content style={{ marginTop: 3, overflow: "initial" }}>
             <div className="site-layout-background" style={{ padding: 12 }}>
-              <Route path="/" exact component={User} />
-              <Route path="/apiResource" component={ApiResource} />
-              <Route path="/client" component={Client} />
-              <Route path="/role" component={Role} />
-              <Route path="/user" component={User} />
+              <Route path="/" exact component={User} key="Index" />
+              <Route
+                path="/apiResource"
+                component={ApiResource}
+                key="ApiResource"
+              />
+              <Route path="/client" component={Client} key="Client" />
+              <Route path="/role" component={Role} key="Role" />
+              <Route path="/user" component={User} key="User" />
             </div>
           </Content>
         </Layout>

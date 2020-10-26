@@ -7,3 +7,4 @@ export const ROLE_DELETE_URL = RootAPI + "/Role/DeleteById";
 export const ROLE_FIND_BY_NAME_URL = RootAPI + "/Role/FindByName";
 
 export const USER_SEARCH_URL = RootAPI + "/User/Search";
+export const USER_GET_ROLENAME_ALL_URL = RootAPI + "/Role/GetAllName";

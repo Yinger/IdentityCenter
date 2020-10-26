@@ -20,4 +20,5 @@ export type UserResponse = UserInfo[] | undefined;
 
 export type State = Readonly<{
   userList: UserResponse;
+  roleNameList: string[];
 }>;

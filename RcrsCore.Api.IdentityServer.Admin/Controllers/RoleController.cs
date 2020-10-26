@@ -7,6 +7,7 @@ using RcrsCore.IdentityServer.Dto.ViewModel;
 using RcrsCore.IdentityServer.Dto.ViewModel.Role;
 using RcrsCore.Api.IdentityServer.Admin.Biz;
 using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application;
+using System.Linq;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Controllers
 {
@@ -58,6 +59,27 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
                 Msg = "OK",
                 Success = true,
                 Data = roleList
+            };
+        }
+
+        //---------------------------------------------------------------
+        /// <summary>
+        /// ロール全件取得（ロール名のみ）
+        /// </summary>
+        /// <returns></returns>
+        //---------------------------------------------------------------
+        [HttpGet]
+        [Route("GetAllName")]
+        public MessageModel<List<string>> GetRoleNameAll()
+        {
+            List<RoleViewModel> roleList = _bizRole.GetRoleList();
+            List<string> roleNameList = roleList.Select(s => s.RoleName).ToList();
+
+            return new MessageModel<List<string>>()
+            {
+                Msg = "OK",
+                Success = true,
+                Data = roleNameList
             };
         }
 

@@ -114,9 +114,13 @@ const InfoModal = (props: Props) => {
                       <Tag
                         className="edit-tag"
                         key={role}
-                        closable={index !== 0}
+                        closable={true}
+                        color="blue"
+                        style={{ fontSize: "16px" }}
                         // onClose={}
-                      ></Tag>
+                      >
+                        {role}
+                      </Tag>
                     </>
                   );
                 })

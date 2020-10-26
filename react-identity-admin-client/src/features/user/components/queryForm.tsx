@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Form, Input } from "antd";
 import { FormProps } from "antd/lib/form";
 import { SearchOutlined, ClearOutlined } from "@ant-design/icons";
@@ -63,60 +63,74 @@ const QueryForm = (props: Props) => {
     queryUser({ loginName, email, lgCode, lgKaKakari, roleName });
   };
 
-  useEffect(() => {
-    queryUser({ loginName, email, lgCode, lgKaKakari, roleName });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   queryUser({ loginName, email, lgCode, lgKaKakari, roleName });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
-    <Form layout="inline" className="ant-form-item">
-      <Form.Item>
+    <Form layout="inline" className="ant-form-item" key="user-form">
+      <Form.Item key="user-form-item-loginName">
         <Input
           placeholder="ユーザー名"
           style={{ width: 200 }}
           value={loginName}
           onChange={handleLoginNameChange}
+          key="user-form-loginName"
         />
       </Form.Item>
-      <Form.Item>
+      <Form.Item key="user-form-item-email">
         <Input
           placeholder="メール"
           style={{ width: 200 }}
           value={email}
           onChange={handleEmailChange}
+          key="user-form-email"
         />
       </Form.Item>
-      <Form.Item>
+      <Form.Item key="user-form-item-lgCode">
         <Input
           placeholder="市区町村"
           style={{ width: 200 }}
           value={lgCode}
           onChange={handleLgCodeChange}
+          key="user-form-lgCode"
         />
       </Form.Item>
-      <Form.Item>
+      <Form.Item key="user-form-item-lgKaKakari">
         <Input
           placeholder="所属課"
           style={{ width: 200 }}
           value={lgKaKakari}
           onChange={handleLgKaKakariChange}
+          key="user-form-lgKaKakari"
         />
       </Form.Item>
-      <Form.Item>
+      <Form.Item key="user-form-item-roleName">
         <Input
           placeholder="ロール"
           style={{ width: 200 }}
           value={roleName}
           onChange={handleRoleNameChange}
+          key="user-form-roleName"
         />
       </Form.Item>
-      <Form.Item>
-        <Button type="primary" onClick={handleSubmit} icon={<SearchOutlined />}>
+      <Form.Item key="user-form-item-submit">
+        <Button
+          type="primary"
+          onClick={handleSubmit}
+          icon={<SearchOutlined />}
+          key="btn-user-search"
+        >
           検索
         </Button>
       </Form.Item>
-      <Form.Item>
-        <Button onClick={handleReset} icon={<ClearOutlined />}>
+      <Form.Item key="user-form-item-clear">
+        <Button
+          onClick={handleReset}
+          icon={<ClearOutlined />}
+          key="btn-user-search-clear"
+        >
           クリア
         </Button>
       </Form.Item>

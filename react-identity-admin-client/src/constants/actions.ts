@@ -10,3 +10,4 @@ export const USER_UPDATE = "USER_UPDATE";
 export const USER_CREATE = "USER_CREATE";
 export const USER_DELETE = "USER_DELETE";
 export const USER_FIND_BY_NAME = "USER_FIND_BY_NAME";
+export const USER_GET_ROLENAME_ALL = "USER_GET_ROLENAME_ALL";

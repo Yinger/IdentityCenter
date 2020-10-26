@@ -4,8 +4,8 @@ import { BrowserRouter, Route } from "react-router-dom";
 import App from "../features/App";
 
 const Root = () => (
-  <BrowserRouter>
-    <Route path="/*" component={App} />
+  <BrowserRouter key="browser-router">
+    <Route path="/*" component={App} key="route" />
   </BrowserRouter>
 );
 

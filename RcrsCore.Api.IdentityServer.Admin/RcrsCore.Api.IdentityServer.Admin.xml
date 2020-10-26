@@ -794,6 +794,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.RoleController.GetRoleNameAll">
+            <summary>
+            ロール全件取得（ロール名のみ）
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.RoleController.FindById(System.String)">
             <summary>
             IDでロールを取得します。
