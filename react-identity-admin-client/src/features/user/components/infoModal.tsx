@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { Modal, Form, Input, Tag } from "antd";
+import { Modal, Form, Input, Select, Tag } from "antd";
 import { FormProps } from "antd/lib/form";
 import { UserInfo } from "../../../interface/user";
+// import { PlusOutlined } from "@ant-design/icons";
 
+const { Option } = Select;
 const layout = {
   labelCol: {
-    span: 8,
+    span: 6,
   },
   wrapperCol: {
-    span: 16,
+    span: 18,
   },
 };
 
@@ -16,6 +18,7 @@ interface Props extends FormProps {
   visible: boolean;
   edit: boolean;
   rowData: Partial<UserInfo>;
+  roleNameList: string[];
   hide(): void;
   // createData(param: UserCreateRequest, callback: () => void): void;
   // updateData(param: UserUpdateRequest, callback: () => void): void;
@@ -24,8 +27,11 @@ interface Props extends FormProps {
 const InfoModal = (props: Props) => {
   const [form] = Form.useForm();
   const [confirmLoading, setConfirmLoading] = useState(false);
+  const [userRoleNameList, setUserRoleNameList] = useState<string[]>([]);
 
-  const handleOk = () => {};
+  const handleOk = () => {
+    console.log(userRoleNameList);
+  };
 
   /**
    * 「キャンセル」ボタンをクリック時に発生します
@@ -42,6 +48,10 @@ const InfoModal = (props: Props) => {
     setConfirmLoading(false);
   };
 
+  function handleRoleNameListChange(value: string[]) {
+    setUserRoleNameList(value);
+  }
+
   let title = props.edit ? "編集" : "新しいユーザー情報を作成";
   let {
     loginName,
@@ -49,7 +59,7 @@ const InfoModal = (props: Props) => {
     lgCode,
     lgKaKakari,
     listRole,
-    // listClaim,
+    listClaim,
   } = props.rowData;
 
   return (
@@ -77,7 +87,7 @@ const InfoModal = (props: Props) => {
           >
             <Input
               placeholder="ユーザー名"
-              style={{ width: 200 }}
+              style={{ width: 300 }}
               maxLength={20}
               allowClear
             />
@@ -85,7 +95,7 @@ const InfoModal = (props: Props) => {
           <Form.Item label="メール" name="email" initialValue={email}>
             <Input
               placeholder="メール"
-              style={{ width: 200 }}
+              style={{ width: 300 }}
               maxLength={20}
               allowClear
             />
@@ -93,7 +103,7 @@ const InfoModal = (props: Props) => {
           <Form.Item label="市区町村" name="lgCode" initialValue={lgCode}>
             <Input
               placeholder="市区町村"
-              style={{ width: 200 }}
+              style={{ width: 300 }}
               maxLength={20}
               allowClear
             />
@@ -101,30 +111,48 @@ const InfoModal = (props: Props) => {
           <Form.Item label="所属課" name="lgKaKakari" initialValue={lgKaKakari}>
             <Input
               placeholder="所属課"
-              style={{ width: 200 }}
+              style={{ width: 300 }}
               maxLength={20}
               allowClear
             />
           </Form.Item>
           <Form.Item label="ロール" name="listRole" initialValue={listRole}>
-            {listRole !== undefined && listRole != null
-              ? listRole.map((role, index) => {
-                  return (
-                    <>
-                      <Tag
-                        className="edit-tag"
-                        key={role}
-                        closable={true}
-                        color="blue"
-                        style={{ fontSize: "16px" }}
-                        // onClose={}
-                      >
-                        {role}
-                      </Tag>
-                    </>
-                  );
-                })
+            <Select
+              mode="multiple"
+              size="middle"
+              placeholder="ロールを選択してください"
+              defaultValue={listRole}
+              onChange={handleRoleNameListChange}
+              style={{ width: 300 }}
+            >
+              {props.roleNameList !== undefined && props.roleNameList != null
+                ? props.roleNameList.map((role: string) => (
+                    <Option key={role} value={role}>
+                      {role}
+                    </Option>
+                  ))
+                : ""}
+            </Select>
+          </Form.Item>
+          <Form.Item
+            label="クレーム(固定)"
+            name="listRole"
+            initialValue={listClaim}
+          >
+            {listClaim !== undefined && listClaim != null
+              ? listClaim.map((claim: string) => (
+                  <Tag color="purple" key={claim}>
+                    {claim}
+                  </Tag>
+                ))
               : ""}
+            {/* (listClaim !== undefined && listClaim != null
+                ? listClaim.map((claim: string) => (
+                    <Tag key={claim} value={role}>
+                      {role}
+                    </Tag>
+                  ))
+                : "") */}
           </Form.Item>
         </Form>
       </Modal>

@@ -82,6 +82,7 @@ const User = (props: Props) => {
         edit={edit}
         rowData={rowData}
         hide={hideModal}
+        roleNameList={props.roleNameList}
         // createData={props.onCreateRole}
         // updateData={props.onUpdateRole}
       />

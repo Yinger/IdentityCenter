@@ -18,7 +18,6 @@ export function getUserRoleNameList(param: any, callback: () => void) {
 }
 
 export function reducer(state: State, action: Action) {
-  console.log(action.payload);
   switch (action.type) {
     case USER_GET_ROLENAME_ALL:
       return {
