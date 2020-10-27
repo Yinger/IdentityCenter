@@ -11,7 +11,7 @@ const DataColumns = (handleUpdate: (record: UserInfo) => void) =>
         title: "ID",
         dataIndex: "id",
         key: "id",
-        width: 100,
+        width: 300,
         ellipsis: true,
       },
       {

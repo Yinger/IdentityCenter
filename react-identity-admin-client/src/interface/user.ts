@@ -16,6 +16,16 @@ export interface UserSearchRequest {
   roleName?: string;
 }
 
+export interface UserUpdateRequest {
+  id: string;
+  loginName: string;
+  email: string;
+  lgCode: string;
+  lgKaKakari: string;
+  listRole: string[] | undefined;
+  listClaim: string[] | undefined;
+}
+
 export type UserResponse = UserInfo[] | undefined;
 
 export type State = Readonly<{

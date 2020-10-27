@@ -30,10 +30,11 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
         /// </summary>
         /// <param name="userManager"></param>
         /// <param name="applicationContext"></param>
+        /// <param name="roleManager"></param>
         //---------------------------------------------------------------
-        public UserController(UserManager<ApplicationUser> userManager, ApplicationContext applicationContext)
+        public UserController(UserManager<ApplicationUser> userManager, ApplicationContext applicationContext, RoleManager<ApplicationRole> roleManager)
         {
-            _bizUser = new BizUser(applicationContext, userManager);
+            _bizUser = new BizUser(applicationContext, userManager, roleManager);
         }
 
         //---------------------------------------------------------------
@@ -187,7 +188,6 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
         //---------------------------------------------------------------
         /// <summary>
         /// ユーザーを更新します。
-        /// （ユーザーのロール情報は別途で管理します）
         /// </summary>
         /// <param name="viewModel">ユーザー情報</param>
         /// <returns></returns>

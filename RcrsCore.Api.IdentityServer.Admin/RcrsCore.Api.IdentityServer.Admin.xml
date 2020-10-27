@@ -360,12 +360,16 @@
         <member name="F:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser._bizClaim">
             <summary></summary>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.#ctor(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext,Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser})">
+        <member name="F:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser._bizRole">
+            <summary></summary>
+        </member>
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.#ctor(RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext,Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationRole})">
             <summary>
             初期化します。
             </summary>
             <param name="applicationContext"></param>
             <param name="userManager">APIs for managing user</param>
+            <param name="roleManager">APIs for managing user role</param>
         </member>
         <member name="M:RcrsCore.Api.IdentityServer.Admin.Biz.BizUser.GetUserList(RcrsCore.IdentityServer.Dto.ViewModel.User.UserSearchModel)">
             <summary>
@@ -857,12 +861,13 @@
         <member name="F:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController._bizUser">
             <summary></summary>
         </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser},RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext)">
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.#ctor(Microsoft.AspNetCore.Identity.UserManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationUser},RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application.ApplicationContext,Microsoft.AspNetCore.Identity.RoleManager{RcrsCore.IdentityServer.Dto.DomainModel.Application.ApplicationRole})">
             <summary>
             初期化します。
             </summary>
             <param name="userManager"></param>
             <param name="applicationContext"></param>
+            <param name="roleManager"></param>
         </member>
         <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.GetAll">
             <summary>
@@ -909,7 +914,6 @@
         <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserController.Edit(RcrsCore.IdentityServer.Dto.ViewModel.User.UserViewModel)">
             <summary>
             ユーザーを更新します。
-            （ユーザーのロール情報は別途で管理します）
             </summary>
             <param name="viewModel">ユーザー情報</param>
             <returns></returns>
@@ -974,14 +978,6 @@
             </summary>
             <param name="userId"></param>
             <param name="roleName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserRoleController.UpdateUserRole(System.String,System.Collections.Generic.List{System.String})">
-            <summary>
-            ユーザーのロールを一括更新します。
-            </summary>
-            <param name="userId"></param>
-            <param name="listUpdatedRoleName"></param>
             <returns></returns>
         </member>
         <member name="T:RcrsCore.Api.IdentityServer.Admin.Extensions.IdentityServer.IdentityServer4Setup">

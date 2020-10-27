@@ -7,6 +7,7 @@ using RcrsCore.IdentityServer.Dto;
 using RcrsCore.IdentityServer.Dto.DomainModel.Application;
 using RcrsCore.IdentityServer.Dto.ViewModel.User;
 using RcrsCore.Api.IdentityServer.Admin.Models.DbFirst.Application;
+using RcrsCore.IdentityServer.Dto.ViewModel.Role;
 
 namespace RcrsCore.Api.IdentityServer.Admin.Biz
 {
@@ -26,18 +27,23 @@ namespace RcrsCore.Api.IdentityServer.Admin.Biz
         /// <summary></summary>
         private readonly BizUserClaims _bizClaim;
 
+        /// <summary></summary>
+        private readonly BizRole _bizRole;
+
         //---------------------------------------------------------------
         /// <summary>
         /// 初期化します。
         /// </summary>
         /// <param name="applicationContext"></param>
         /// <param name="userManager">APIs for managing user</param>
+        /// <param name="roleManager">APIs for managing user role</param>
         //---------------------------------------------------------------
-        public BizUser(ApplicationContext applicationContext, UserManager<ApplicationUser> userManager)
+        public BizUser(ApplicationContext applicationContext, UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager)
         {
             _applicationContext = applicationContext;
             _userManager = userManager;
             _bizClaim = new BizUserClaims(userManager, applicationContext);
+            _bizRole = new BizRole(applicationContext, roleManager);
         }
 
         //---------------------------------------------------------------
@@ -206,7 +212,15 @@ namespace RcrsCore.Api.IdentityServer.Admin.Biz
                 appUser.LgKaKakari = viewModel.LgKaKakari;
 
                 if (_userManager.UpdateAsync(appUser).Result.Succeeded)
+                {
+                    editUserRole(viewModel);
+
+                    appUser = (from user in _applicationContext.Users.Include(x => x.UserRoles)
+                               where user.Id == userId
+                               select user).FirstOrDefault();
+
                     return mapperEntityToViewModel(appUser);
+                }
             }
 
             return null;
@@ -335,6 +349,36 @@ namespace RcrsCore.Api.IdentityServer.Admin.Biz
             }
 
             return viewUser;
+        }
+
+        private void editUserRole(UserViewModel viewModel)
+        {
+            List<string> listUpdatedRoleName = viewModel.ListRole;
+
+            if (listUpdatedRoleName != null)
+            {
+                List<RoleViewModel> roleList = _bizRole.GetRoleListByUserId(viewModel.Id);
+                List<string> listOldRoleName = new List<string>();
+
+                if (roleList != null)
+                {
+                    listOldRoleName = roleList.Select(x => x.RoleName).ToList();
+
+                    //listUpdatedRoleName有 listOldRoleName無 ⇒ 追加
+                    foreach (string roleName in listUpdatedRoleName)
+                    {
+                        if (!listOldRoleName.Contains(roleName))
+                            AddRole(viewModel.Id, roleName);
+                    }
+
+                    //listUpdatedRoleName無 listOldRoleName有 ⇒ 削除
+                    foreach (string roleName in listOldRoleName)
+                    {
+                        if (!listUpdatedRoleName.Contains(roleName))
+                            RemoveRole(viewModel.Id, roleName);
+                    }
+                }
+            }
         }
     }
 }

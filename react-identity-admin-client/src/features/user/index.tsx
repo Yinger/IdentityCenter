@@ -5,12 +5,14 @@ import {
   UserInfo,
   UserResponse,
   UserSearchRequest,
+  UserUpdateRequest,
 } from "../../interface/user";
 import { Button, PageHeader, Table } from "antd";
 import {
   getUserClaimNameList,
   getUserList,
   getUserRoleNameList,
+  updateUser,
 } from "./redux/actions";
 import DataColumns from "./components/dataColumns";
 import QueryForm from "./components/queryForm";
@@ -22,6 +24,7 @@ interface Props {
   onSearchUser(param: UserSearchRequest, callback: () => void): void;
   onInitRoleNameList(param: any, callback: () => void): void;
   onInitClaimNameList(param: any, callback: () => void): void;
+  onUpdateUser(param: UserUpdateRequest, callback: () => void): void;
   userList: UserResponse;
   roleNameList: string[];
   claimNameList: string[];
@@ -92,7 +95,7 @@ const User = (props: Props) => {
         roleNameList={props.roleNameList}
         claimNameList={props.claimNameList}
         // createData={props.onCreateRole}
-        // updateData={props.onUpdateRole}
+        updateData={props.onUpdateUser}
       />
       <Table
         columns={DataColumns(handleUpdate)}
@@ -119,6 +122,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       onSearchUser: getUserList,
       onInitRoleNameList: getUserRoleNameList,
       onInitClaimNameList: getUserClaimNameList,
+      onUpdateUser: updateUser,
     },
     dispatch
   );
