@@ -215,5 +215,49 @@ namespace RcrsCore.Api.IdentityServer.Admin.Controllers
 
             return messageModel;
         }
+
+        //---------------------------------------------------------------
+        /// <summary>
+        /// ユーザーのロールを一括更新します。
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="listUpdatedRoleName"></param>
+        /// <returns></returns>
+        //---------------------------------------------------------------
+        [HttpPost]
+        [Route("UpdateUserRole")]
+        public MessageModel<List<string>> UpdateUserRole(string userId, List<string> listUpdatedRoleName)
+        {
+            MessageModel<List<string>> messageModel = new MessageModel<List<string>>();
+
+            if (listUpdatedRoleName != null)
+            {
+                List<RoleViewModel> roleList = _bizRole.GetRoleListByUserId(userId);
+                List<string> listOldRoleName = new List<string>();
+
+                if (roleList != null)
+                    listOldRoleName = roleList.Select(x => x.RoleName).ToList();
+
+                //listUpdatedRoleName有 listOldRoleName無 ⇒ 追加
+                foreach (string roleName in listUpdatedRoleName)
+                {
+                    if (!listOldRoleName.Contains(roleName))
+                        _bizUser.AddRole(userId, roleName);
+                }
+
+                //listUpdatedRoleName無 listOldRoleName有 ⇒ 削除
+                foreach (string roleName in listOldRoleName)
+                {
+                    if (!listUpdatedRoleName.Contains(roleName))
+                        _bizUser.RemoveRole(userId, roleName);
+                }
+            }
+
+            messageModel.Msg = "OK";
+            messageModel.Success = true;
+            messageModel.Data = listUpdatedRoleName;
+
+            return messageModel;
+        }
     }
 }

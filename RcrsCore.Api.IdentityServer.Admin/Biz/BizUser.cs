@@ -285,7 +285,7 @@ namespace RcrsCore.Api.IdentityServer.Admin.Biz
 
             if (user != null && role != null)
             {
-                ApplicationUserRole userRole = _applicationContext.UserRoles.Where(x => (x.UserId.ToString() == userId && x.RoleId == role.Id)).FirstOrDefault();
+                ApplicationUserRole userRole = _applicationContext.UserRoles.Where(x => (x.UserId == user.Id && x.RoleId == role.Id)).FirstOrDefault();
 
                 if (userRole != null)
                 {

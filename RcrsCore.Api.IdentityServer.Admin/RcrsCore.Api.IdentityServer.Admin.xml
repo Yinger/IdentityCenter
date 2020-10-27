@@ -976,6 +976,14 @@
             <param name="roleName"></param>
             <returns></returns>
         </member>
+        <member name="M:RcrsCore.Api.IdentityServer.Admin.Controllers.UserRoleController.UpdateUserRole(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            ユーザーのロールを一括更新します。
+            </summary>
+            <param name="userId"></param>
+            <param name="listUpdatedRoleName"></param>
+            <returns></returns>
+        </member>
         <member name="T:RcrsCore.Api.IdentityServer.Admin.Extensions.IdentityServer.IdentityServer4Setup">
             <summary>
             IdentityServer4に関係の設定クラスです。
