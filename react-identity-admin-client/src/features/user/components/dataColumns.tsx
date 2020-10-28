@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Divider, Popconfirm, Tag } from "antd";
+import { Button, Divider, Popconfirm, Tag, Tooltip } from "antd";
 import { UserDeleteRequest, UserInfo } from "../../../interface/user";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
@@ -41,11 +41,7 @@ const DataColumns = (
       key: "listRole",
       render: (roleList: string[] | undefined | null) =>
         roleList !== undefined && roleList != null
-          ? roleList.map((tag: string) => (
-              <Tag color="blue" key={tag}>
-                {tag}
-              </Tag>
-            ))
+          ? roleList.map((tag: string) => <Tag key={tag}>{tag}</Tag>)
           : "",
     },
     // {
@@ -62,38 +58,41 @@ const DataColumns = (
     //       : "",
     // },
     {
-      // title: "操作",
+      title: "操作",
       key: "action",
+      align: "center" as "center",
+      // align: "center",
 
       render: (text: string, record: UserInfo) => (
-        <span style={{ float: "right" }}>
-          <Button
-            size="small"
-            icon={<EditOutlined />}
-            type="primary"
-            onClick={() => {
-              handleUpdate(record);
-            }}
-          >
-            編集
-          </Button>
-          <Divider type="vertical" />
-          <Popconfirm
-            title={`${record.loginName} を削除しますか？`}
-            onConfirm={() => {
-              console.log(record);
-              handleDelete({ id: record.id });
-            }}
-          >
+        <span>
+          <Tooltip title="編集" color={"blue"} placement="bottom">
             <Button
               size="small"
-              icon={<DeleteOutlined />}
+              icon={<EditOutlined />}
               type="primary"
-              danger
+              onClick={() => {
+                handleUpdate(record);
+              }}
+            />
+          </Tooltip>
+
+          <Divider type="vertical" />
+          <Tooltip title="削除" color={"red"} placement="bottom">
+            <Popconfirm
+              title={`${record.loginName} を削除しますか？`}
+              onConfirm={() => {
+                console.log(record);
+                handleDelete({ id: record.id });
+              }}
             >
-              削除
-            </Button>
-          </Popconfirm>
+              <Button
+                size="small"
+                icon={<DeleteOutlined />}
+                type="primary"
+                danger
+              />
+            </Popconfirm>
+          </Tooltip>
         </span>
       ),
     },
