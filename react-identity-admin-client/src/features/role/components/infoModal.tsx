@@ -11,10 +11,10 @@ import {
 
 const layout = {
   labelCol: {
-    span: 8,
+    span: 5,
   },
   wrapperCol: {
-    span: 16,
+    span: 19,
   },
 };
 
@@ -112,12 +112,14 @@ const InfoModal = (props: Props) => {
         onOk={handleOk}
         onCancel={handleCancel}
         confirmLoading={confirmLoading}
+        width={560}
       >
         <Form form={form} {...layout} preserve={false}>
           <Form.Item
             label="ロール名"
             name="roleName"
             initialValue={roleName}
+            style={{ marginBottom: "5px" }}
             rules={[
               {
                 required: true,
@@ -128,25 +130,35 @@ const InfoModal = (props: Props) => {
           >
             <Input
               placeholder="ロール名"
-              style={{ width: 200 }}
-              maxLength={20}
-              allowClear
+              style={{ width: 390 }}
+              maxLength={50}
+              // allowClear
             />
           </Form.Item>
-          <Form.Item label="タグ" name="tag" initialValue={tag}>
+          <Form.Item
+            label="タグ"
+            name="tag"
+            initialValue={tag}
+            style={{ marginBottom: "5px" }}
+          >
             <Input
               placeholder="タグ"
-              style={{ width: 200 }}
-              maxLength={20}
-              allowClear
+              style={{ width: 390 }}
+              maxLength={50}
+              // allowClear
             />
           </Form.Item>
-          <Form.Item label="説明" name="description" initialValue={description}>
-            <Input
+          <Form.Item
+            label="説明"
+            name="description"
+            initialValue={description}
+            style={{ marginBottom: "5px" }}
+          >
+            <Input.TextArea
               placeholder="説明"
-              style={{ width: 200 }}
-              maxLength={20}
-              allowClear
+              style={{ width: 390 }}
+              maxLength={200}
+              // allowClear
             />
           </Form.Item>
         </Form>

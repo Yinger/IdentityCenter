@@ -1,17 +1,20 @@
 import React, { useState } from "react";
-import { Modal, Form, Input, Select, Tag, Card, message } from "antd";
+import { Modal, Form, Input, Select, Tag, Typography, message } from "antd";
 import { FormProps } from "antd/lib/form";
 import { UserInfo, UserUpdateRequest } from "../../../interface/user";
 import { USER_FIND_BY_NAME_URL } from "../../../constants/urls";
 import { get } from "../../../utils/request";
+import "antd/dist/antd.css";
+import "./infoModal.scss";
 
 const { Option } = Select;
+const { Text } = Typography;
 const layout = {
   labelCol: {
-    span: 6,
+    span: 5,
   },
   wrapperCol: {
-    span: 18,
+    span: 19,
   },
 };
 
@@ -42,7 +45,7 @@ const InfoModal = (props: Props) => {
 
       //id非表示ので、ここで記入します
       param.id = props.rowData.id;
-      // param.listRole = userRoleNameList;
+      param.listRole = props.rowData.listRole;
 
       //loading開始
       setConfirmLoading(true);
@@ -106,6 +109,7 @@ const InfoModal = (props: Props) => {
 
   let title = props.edit ? "編集" : "新しいユーザー情報を作成";
   let {
+    id,
     loginName,
     email,
     lgCode,
@@ -123,15 +127,26 @@ const InfoModal = (props: Props) => {
         onOk={handleOk}
         onCancel={handleCancel}
         confirmLoading={confirmLoading}
+        width={560}
       >
-        <Form form={form} {...layout} preserve={false}>
-          <Card
-            type="inner"
-            size="small"
-            title="クレーム(固定)"
-            style={{ marginTop: -20, marginBottom: 10 }}
+        <Form
+          form={form}
+          {...layout}
+          preserve={false}
+          style={{ margin: 0, marginTop: -20 }}
+        >
+          <div
+            className="space-align-block"
+            style={{ marginTop: -2, marginBottom: 20 }}
           >
-            {/* <p>※ログイン後に下記ユーザー情報を取得できています</p> */}
+            <Text>
+              クレーム
+              <Text strong> (固定) </Text>
+              <Text type="secondary">
+                ログイン後下記ユーザー情報を取得できています
+              </Text>
+            </Text>
+            <br />
             {props.claimNameList !== undefined && props.claimNameList != null
               ? props.claimNameList.map((claim: string) => (
                   <Tag key={claim} color="purple">
@@ -139,11 +154,30 @@ const InfoModal = (props: Props) => {
                   </Tag>
                 ))
               : ""}
-          </Card>
+          </div>
+          <Form.Item
+            label="ID"
+            name="id"
+            initialValue={props.edit ? id : "-1"}
+            style={{ marginBottom: "5px" }}
+          >
+            <Input
+              placeholder="ID"
+              style={{ width: 390 }}
+              // maxLength={20}
+              readOnly={true}
+              addonAfter={
+                <Tag color="purple" style={{ margin: 0 }}>
+                  {"userid"}
+                </Tag>
+              }
+            />
+          </Form.Item>
           <Form.Item
             label="ユーザー名"
             name="loginName"
             initialValue={loginName}
+            style={{ marginBottom: "5px" }}
             rules={[
               {
                 required: true,
@@ -154,57 +188,101 @@ const InfoModal = (props: Props) => {
           >
             <Input
               placeholder="ユーザー名"
-              style={{ width: 300 }}
-              maxLength={20}
-              allowClear
+              style={{ width: 390 }}
+              // maxLength={20}
+              addonAfter={
+                <Tag color="purple" style={{ margin: 0 }}>
+                  {"name"}
+                </Tag>
+              }
             />
           </Form.Item>
-          <Form.Item label="メール" name="email" initialValue={email}>
+
+          <Form.Item
+            label="メール"
+            name="email"
+            initialValue={email}
+            style={{ marginBottom: "5px" }}
+          >
             <Input
               placeholder="メール"
-              style={{ width: 300 }}
-              maxLength={20}
-              allowClear
+              style={{ width: 390 }}
+              maxLength={50}
+              addonAfter={
+                <Tag color="purple" style={{ margin: 0 }}>
+                  {"email"}
+                </Tag>
+              }
             />
           </Form.Item>
-          <Form.Item label="市区町村" name="lgCode" initialValue={lgCode}>
+          <Form.Item
+            label="市区町村"
+            name="lgCode"
+            initialValue={lgCode}
+            style={{ marginBottom: "5px" }}
+          >
             <Input
               placeholder="市区町村"
-              style={{ width: 300 }}
+              style={{ width: 390 }}
               maxLength={20}
-              allowClear
+              addonAfter={
+                <Tag color="purple" style={{ margin: 0 }}>
+                  {"lgcode"}
+                </Tag>
+              }
             />
           </Form.Item>
-          <Form.Item label="所属課" name="lgKaKakari" initialValue={lgKaKakari}>
-            <Input
-              placeholder="所属課"
-              style={{ width: 300 }}
-              maxLength={20}
-              allowClear
-            />
+          <Form.Item
+            label="所属課"
+            name="lgKaKakari"
+            initialValue={lgKaKakari}
+            style={{ marginBottom: "5px" }}
+          >
+            <Input placeholder="所属課" style={{ width: 390 }} maxLength={20} />
           </Form.Item>
           <Form.Item
             label="ロール"
             name="listRole"
             initialValue={listRole}
             key="listRole"
+            style={{ marginBottom: "5px" }}
           >
-            <Select
-              mode="multiple"
-              size="middle"
-              placeholder="ロールを選択してください"
-              defaultValue={listRole}
-              onChange={handleRoleNameListChange}
-              style={{ width: 300 }}
+            <div
+              className="ant-input-group ant-input-group-compact"
+              style={{ width: 390 }}
             >
-              {props.roleNameList !== undefined && props.roleNameList != null
-                ? props.roleNameList.map((role: string) => (
-                    <Option key={role} value={role}>
-                      {role}
-                    </Option>
-                  ))
-                : ""}
-            </Select>
+              <Select
+                mode="multiple"
+                size="middle"
+                placeholder="ロールを選択してください"
+                defaultValue={listRole}
+                onChange={handleRoleNameListChange}
+                style={{ width: 330 }}
+              >
+                {props.roleNameList !== undefined && props.roleNameList != null
+                  ? props.roleNameList.map((role: string) => (
+                      <Option key={role} value={role}>
+                        {role}
+                      </Option>
+                    ))
+                  : ""}
+              </Select>
+              <div
+                className="ant-input-group-addon"
+                style={{
+                  width: 60,
+                  height: 32,
+                  textAlign: "center",
+                  marginLeft: 1,
+                }}
+              >
+                {
+                  <Tag color="purple" style={{ marginTop: 4 }}>
+                    {"role"}
+                  </Tag>
+                }
+              </div>
+            </div>
           </Form.Item>
         </Form>
       </Modal>
