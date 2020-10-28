@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { bindActionCreators, Dispatch } from "redux";
 import { connect } from "react-redux";
 import {
+  UserCreateRequest,
+  UserDeleteRequest,
   UserInfo,
   UserResponse,
   UserSearchRequest,
@@ -9,6 +11,8 @@ import {
 } from "../../interface/user";
 import { Button, PageHeader, Table } from "antd";
 import {
+  createUser,
+  deleteUser,
   getUserClaimNameList,
   getUserList,
   getUserRoleNameList,
@@ -25,6 +29,8 @@ interface Props {
   onInitRoleNameList(param: any, callback: () => void): void;
   onInitClaimNameList(param: any, callback: () => void): void;
   onUpdateUser(param: UserUpdateRequest, callback: () => void): void;
+  onCreateUser(param: UserCreateRequest, callback: () => void): void;
+  onDeleteUser(param: UserDeleteRequest): void;
   userList: UserResponse;
   roleNameList: string[];
   claimNameList: string[];
@@ -44,6 +50,10 @@ const User = (props: Props) => {
     setRowData({});
     setShowModal(true);
     setEdit(false);
+  };
+
+  const handleDelete = (param: UserDeleteRequest) => {
+    props.onDeleteUser(param);
   };
 
   const handleUpdate = (record: UserInfo) => {
@@ -94,11 +104,11 @@ const User = (props: Props) => {
         hide={hideModal}
         roleNameList={props.roleNameList}
         claimNameList={props.claimNameList}
-        // createData={props.onCreateRole}
+        createData={props.onCreateUser}
         updateData={props.onUpdateUser}
       />
       <Table
-        columns={DataColumns(handleUpdate)}
+        columns={DataColumns(handleUpdate, handleDelete)}
         dataSource={props.userList}
         loading={loading}
         className="table"
@@ -123,6 +133,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       onInitRoleNameList: getUserRoleNameList,
       onInitClaimNameList: getUserClaimNameList,
       onUpdateUser: updateUser,
+      onCreateUser: createUser,
+      onDeleteUser: deleteUser,
     },
     dispatch
   );

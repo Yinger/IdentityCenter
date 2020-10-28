@@ -183,6 +183,9 @@ namespace RcrsCore.Api.IdentityServer.Admin.Biz
 
             if (_userManager.CreateAsync(appUser, IdentityConst.DefaultPassword).Result.Succeeded)
             {
+                if (viewModel.ListRole != null && viewModel.ListRole.Count > 0)
+                    _userManager.AddToRolesAsync(appUser, viewModel.ListRole);
+
                 if (_bizClaim.AddUserClaimsAsync(appUser).Result.Succeeded)
                     viewModel = mapperEntityToViewModel(appUser);
             }

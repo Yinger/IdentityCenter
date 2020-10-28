@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Modal, Form, Input, Select, Tag, Typography, message } from "antd";
 import { FormProps } from "antd/lib/form";
-import { UserInfo, UserUpdateRequest } from "../../../interface/user";
+import {
+  UserCreateRequest,
+  UserInfo,
+  UserUpdateRequest,
+} from "../../../interface/user";
 import { USER_FIND_BY_NAME_URL } from "../../../constants/urls";
 import { get } from "../../../utils/request";
 import "antd/dist/antd.css";
@@ -25,7 +29,7 @@ interface Props extends FormProps {
   roleNameList: string[];
   claimNameList: string[];
   hide(): void;
-  // createData(param: UserCreateRequest, callback: () => void): void;
+  createData(param: UserCreateRequest, callback: () => void): void;
   updateData(param: UserUpdateRequest, callback: () => void): void;
 }
 
@@ -56,7 +60,7 @@ const InfoModal = (props: Props) => {
         get(USER_FIND_BY_NAME_URL, paramFindUserByName).then((res) => {
           if (res.data == null) {
             //既存ではないの場合、新規処理行います
-            // props.createData(param as UserCreateRequest, close);
+            props.createData(param as UserCreateRequest, close);
           } else {
             //loading終止
             setConfirmLoading(false);
@@ -203,6 +207,13 @@ const InfoModal = (props: Props) => {
             name="email"
             initialValue={email}
             style={{ marginBottom: "5px" }}
+            rules={[
+              {
+                required: true,
+                type: "email",
+                message: "正しいメールアドレスを入力してください",
+              },
+            ]}
           >
             <Input
               placeholder="メール"
